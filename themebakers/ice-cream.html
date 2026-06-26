@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ice Cream & Desserts — Azmeer Bakery</title>
+  <meta name="description" content="Artisan scoops, fusion sundaes, and chilled desserts made with real cream." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&family=DM+Sans:wght@400;600;700;800&family=Inter:wght@800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="css/category.css" />
+</head>
+<body>
+
+  <!-- ===== HEADER ===== -->
+  <header class="site-header">
+    <nav class="site-header__nav">
+      <a href="../index.html" class="site-header__logo">AZMEER BAKERY</a>
+      <div class="search-bar" role="search">
+        <svg class="search-bar__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
+        </svg>
+        <input class="search-bar__input" type="search" placeholder="Search for cakes, sweets, pastries..." aria-label="Search products" />
+      </div>
+      <div class="header-controls">
+        <div class="lang-switcher">
+          <span class="lang-switcher__active">EN</span>
+          <div class="lang-switcher__divider"></div>
+          <span class="lang-switcher__inactive">URDU</span>
+        </div>
+        <div class="header-icons">
+          <button class="header-icon-btn" aria-label="Account">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" width="24" height="24">
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/>
+            </svg>
+          </button>
+          <div class="cart-wrapper">
+            <button class="header-icon-btn" aria-label="Shopping bag">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" width="24" height="24">
+                <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/>
+                <line x1="3" y1="6" x2="21" y2="6"/>
+                <path d="M16 10a4 4 0 0 1-8 0"/>
+              </svg>
+            </button>
+            <span class="cart-badge" aria-label="3 items in cart">3</span>
+          </div>
+        </div>
+      </div>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobile-nav">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+    <div class="delivery-strip">
+      Free delivery on orders above Rs. 999 &mdash; Same-day delivery available
+    </div>
+  </header>
+
+  <!-- Mobile nav -->
+  <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile navigation">
+    <div class="search-bar mobile-nav__search" role="search">
+      <svg class="search-bar__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
+      </svg>
+      <input class="search-bar__input" type="search" placeholder="Search..." />
+    </div>
+    <div class="mobile-nav__links">
+      <a href="../index.html" class="mobile-nav__link">Home</a>
+      <a href="sweets.html" class="mobile-nav__link">Sweets</a>
+      <a href="pizza.html" class="mobile-nav__link">Pizza</a>
+      <a href="snacks.html" class="mobile-nav__link">Snacks</a>
+      <a href="dairy.html" class="mobile-nav__link">Dairy</a>
+      <a href="coffee-tea.html" class="mobile-nav__link">Coffee &amp; Tea</a>
+      <a href="juices.html" class="mobile-nav__link">Juices</a>
+      <a href="shakes.html" class="mobile-nav__link">Shakes</a>
+      <a href="ice-cream.html" class="mobile-nav__link">Ice Cream &amp; Desserts</a>
+      <a href="salad-chaat.html" class="mobile-nav__link">Salad &amp; Chaat</a>
+      <a href="fried-items.html" class="mobile-nav__link">Fried Items</a>
+      <a href="fast-food.html" class="mobile-nav__link">Fast Food</a>
+      <a href="deals.html" class="mobile-nav__link">Deals</a>
+    </div>
+  </nav>
+
+  <div class="header-spacer"></div>
+
+  <main>
+
+    <!-- ===== CATEGORY HERO ===== -->
+    <section class="cat-hero" aria-label="Ice Cream & Desserts category">
+      <div class="cat-hero__bg" aria-hidden="true">
+        <img src="https://www.figma.com/api/mcp/asset/a9e63ff3-bcdf-4edd-a46e-fc587bb83a9a" alt="" />
+        <div class="cat-hero__overlay"></div>
+      </div>
+      <div class="cat-hero__content">
+        <p class="cat-hero__breadcrumb">Home / Products / Ice Cream &amp; Desserts</p>
+        <div>
+          <h1 class="cat-hero__title">Ice Cream &amp; Desserts</h1>
+          <span class="gold-rule gold-rule--lg" style="margin-top:12px;" aria-hidden="true"></span>
+        </div>
+        <p class="cat-hero__subtitle">Artisan scoops, fusion sundaes, and chilled desserts made with real cream.</p>
+      </div>
+    </section>
+
+    <!-- ===== FILTER PILLS ===== -->
+    <div class="filter-strip" role="group" aria-label="Filter by subcategory">
+      <button class="filter-pill is-active" data-filter="All">All</button>
+        <button class="filter-pill" data-filter="Scoops">Scoops</button>
+        <button class="filter-pill" data-filter="Sundaes">Sundaes</button>
+        <button class="filter-pill" data-filter="Kulfi">Kulfi</button>
+        <button class="filter-pill" data-filter="Cheesecake">Cheesecake</button>
+        <button class="filter-pill" data-filter="Brownies">Brownies</button>
+        <button class="filter-pill" data-filter="Waffles">Waffles</button>
+    </div>
+
+    <!-- ===== STICKY TOOLBAR ===== -->
+    <div class="sticky-filter-bar" role="toolbar" aria-label="Product listing controls">
+      <div class="filter-bar__left">
+        <p class="filter-bar__count" aria-live="polite">Showing 1&ndash;12 of 44 results</p>
+        <div class="active-filters">
+          <span class="active-filters__label">Active Filters:</span>
+          <span class="active-filter-tag" data-tag="Ice Cream">Ice Cream &times;</span>
+        </div>
+      </div>
+      <div class="filter-bar__right">
+        <div class="sort-dropdown">
+          <select aria-label="Sort products">
+            <option>Sort by: Popularity</option>
+            <option>Price: Low to High</option>
+            <option>Price: High to Low</option>
+            <option>Newest First</option>
+            <option>Best Rated</option>
+          </select>
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" width="16" height="16" aria-hidden="true">
+            <polyline points="4,6 8,10 12,6"/>
+          </svg>
+        </div>
+        <div class="view-toggle">
+          <button class="view-btn is-active" id="gridViewBtn" aria-label="Grid view" aria-pressed="true">
+            <svg viewBox="0 0 18 18" fill="none" stroke="white" stroke-width="1.5">
+              <rect x="1" y="1" width="7" height="7"/><rect x="10" y="1" width="7" height="7"/>
+              <rect x="1" y="10" width="7" height="7"/><rect x="10" y="10" width="7" height="7"/>
+            </svg>
+          </button>
+          <button class="view-btn" id="listViewBtn" aria-label="List view" aria-pressed="false">
+            <svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5">
+              <line x1="1" y1="4" x2="17" y2="4"/>
+              <line x1="1" y1="9" x2="17" y2="9"/>
+              <line x1="1" y1="14" x2="17" y2="14"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== PRODUCTS GRID ===== -->
+    <section class="products-section" id="productsSection" aria-label="Ice Cream & Desserts products">
+        <div class="products-row">
+          <article class="product-card">
+            <div class="product-card__image-wrap">
+              <a href="../product.html">
+                <img src="https://www.figma.com/api/mcp/asset/c9f80cbd-116f-43ce-8e70-246a3c4d39da" alt="Gulab Jamun Cheesecake" loading="lazy" />
+              </a>
+              <span class="product-card__badge badge">Bestseller</span>
+            </div>
+            <div class="product-card__body">
+              <div>
+                <h3 class="product-card__name"><a href="../product.html">Gulab Jamun Cheesecake</a></h3>
+                <div class="stars" aria-label="4-5 stars"><svg class="star-svg" viewBox="0 0 12 12" fill="#c8a24a"><path d="M6 1l1.35 2.73L10.5 4.1l-2.25 2.19.53 3.1L6 8l-2.78 1.39.53-3.1L1.5 4.1l3.15-.37z"/></svg><svg class="star-svg" viewBox="0 0 12 12" fill="#c8a24a"><path d="M6 1l1.35 2.73L10.5 4.1l-2.25 2.19.53 3.1L6 8l-2.78 1.39.53-3.1L1.5 4.1l3.15-.37z"/></svg><svg class="star-svg" viewBox="0 0 12 12" fill="#c8a24a"><path d="M6 1l1.35 2.73L10.5 4.1l-2.25 2.19.53 3.1L6 8l-2.78 1.39.53-3.1L1.5 4.1l3.15-.37z"/></svg><svg class="star-svg" viewBox="0 0 12 12" fill="#c8a24a"><path d="M6 1l1.35 2.73L10.5 4.1l-2.25 2.19.53 3.1L6 8l-2.78 1.39.53-3.1L1.5 4.1l3.15-.37z"/></svg><svg class="star-svg" viewBox="0 0 12 12" fill="#e8d5b0"><path d="M6 1l1.35 2.73L10.5 4.1l-2.25 2.19.53 3.1L6 8l-2.78 1.39.53-3.1L1.5 4.1l3.15-.37z"/></svg></div>
+              </div>
+              <p class="product-card__price">Rs. 2,450</p>
+              <button class="btn btn--cream btn--full" data-name="Gulab Jamun Cheesecake">Add to Cart</button>
+            </div>
+          </article>
+          <article class="product-card">
+            <div class="product-card__image-wrap">
+              <a href="../product.html">
+                <img src="https://www.figma.com/api/mcp/asset/e7b0ac94-50cc-4976-b1ab-3ebbaf417b8f" alt="Brownie" loading="lazy" />
+              </a>
+              <span class="product-card__badge badge">Trending</span>
+            </div>
+            <div class="product-card__body">
+              <div>
+                <h3 class="product-card__name"><a href="../product.html">Brownie</a></h3>
+                <div class="stars" aria-label="4-5 stars"><svg class="star-svg" viewBox="0 0 12 12" fill="#c8a24a"><path d="M6 1l1.35 2.73L10.5 4.1l-2.25 2.19.53 3.1L6 8l-2.78 1.39.53-3.1L1.5 4.1l3.15-.37z"/></svg><svg class="star-svg" viewBox="0 0 12 12" fill="#c8a24a"><path d="M6 1l1.35 2.73L10.5 4.1l-2.25 2.19.53 3.1L6 8l-2.78 1.39.53-3.1L1.5 4.1l3.15-.37z"/></svg><svg class="star-svg" viewBox="0 0 12 12" fill="#c8a24a"><path d="M6 1l1.35 2.73L10.5 4.1l-2.25 2.19.53 3.1L6 8l-2.78 1.39.53-3.1L1.5 4.1l3.15-.37z"/></svg><svg class="star-svg" viewBox="0 0 12 12" fill="#c8a24a"><path d="M6 1l1.35 2.73L10.5 4.1l-2.25 2.19.53 3.1L6 8l-2.78 1.39.53-3.1L1.5 4.1l3.15-.37z"/></svg><svg class="star-svg" viewBox="0 0 12 12" fill="#e8d5b0"><path d="M6 1l1.35 2.73L10.5 4.1l-2.25 2.19.53 3.1L6 8l-2.78 1.39.53-3.1L1.5 4.1l3.15-.37z"/></svg></div>
+              </div>
+              <p class="product-card__price">Rs. 480</p>
+              <button class="btn btn--cream btn--full" data-name="Brownie">Add to Cart</button>
+            </div>
+          </article>
+          <article class="product-card">
+            <div class="product-card__image-wrap">
+              <a href="../product.html">
+                <img src="https://www.figma.com/api/mcp/asset/07e317dd-34b5-45df-9126-212a9866b4dc" alt="Rose Kulfi (2 pc)" loading="lazy" />
+              </a>
+              <span class="product-card__badge badge">Bestseller</span>
+            </div>
+            <div class="product-card__body">
+              <div>
+                <h3 class="product-card__name"><a href="../product.html">Rose Kulfi (2 pc)</a></h3>
+                <div class="stars" aria-label="4-5 stars"><svg class="star-svg" viewBox="0 0 12 12" fill="#c8a24a"><path d="M6 1l1.35 2.73L10.5 4.1l-2.25 2.19.53 3.1L6 8l-2.78 1.39.53-3.1L1.5 4.1l3.15-.37z"/></svg><svg class="star-svg" viewBox="0 0 12 12" fill="#c8a24a"><path d="M6 1l1.35 2.73L10.5 4.1l-2.25 2.19.53 3.1L6 8l-2.78 1.39.53-3.1L1.5 4.1l3.15-.37z"/></svg><svg class="star-svg" viewBox="0 0 12 12" fill="#c8a24a"><path d="M6 1l1.35 2.73L10.5 4.1l-2.25 2.19.53 3.1L6 8l-2.78 1.39.53-3.1L1.5 4.1l3.15-.37z"/></svg><svg class="star-svg" viewBox="0 0 12 12" fill="#c8a24a"><path d="M6 1l1.35 2.73L10.5 4.1l-2.25 2.19.53 3.1L6 8l-2.78 1.39.53-3.1L1.5 4.1l3.15-.37z"/></svg><svg class="star-svg" viewBox="0 0 12 12" fill="#e8d5b0"><path d="M6 1l1.35 2.73L10.5 4.1l-2.25 2.19.53 3.1L6 8l-2.78 1.39.53-3.1L1.5 4.1l3.15-.37z"/></svg></div>
+              </div>
+              <p class="product-card__price">Rs. 380</p>
+              <button class="btn btn--cream btn--full" data-name="Rose Kulfi (2 pc)">Add to Cart</button>
+            </div>
+          </article>
+          <article class="product-card">
+            <div class="product-card__image-wrap">
+              <a href="../product.html">
+                <img src="https://www.figma.com/api/mcp/asset/8569a77f-16db-4672-a772-e8cffc142836" alt="Matka Kulfi" loading="lazy" />
+              </a>
+              <span class="product-card__badge badge">Traditional</span>
+            </div>
+            <div class="product-card__body">
+              <div>
+                <h3 class="product-card__name"><a href="../product.html">Matka Kulfi</a></h3>
+                <div class="stars" aria-label="4-5 stars"><svg class="star-svg" viewBox="0 0 12 12" fill="#c8a24a"><path d="M6 1l1.35 2.73L10.5 4.1l-2.25 2.19.53 3.1L6 8l-2.78 1.39.53-3.1L1.5 4.1l3.15-.37z"/></svg><svg class="star-svg" viewBox="0 0 12 12" fill="#c8a24a"><path d="M6 1l1.35 2.73L10.5 4.1l-2.25 2.19.53 3.1L6 8l-2.78 1.39.53-3.1L1.5 4.1l3.15-.37z"/></svg><svg class="star-svg" viewBox="0 0 12 12" fill="#c8a24a"><path d="M6 1l1.35 2.73L10.5 4.1l-2.25 2.19.53 3.1L6 8l-2.78 1.39.53-3.1L1.5 4.1l3.15-.37z"/></svg><svg class="star-svg" viewBox="0 0 12 12" fill="#c8a24a"><path d="M6 1l1.35 2.73L10.5 4.1l-2.25 2.19.53 3.1L6 8l-2.78 1.39.53-3.1L1.5 4.1l3.15-.37z"/></svg><svg class="star-svg" viewBox="0 0 12 12" fill="#e8d5b0"><path d="M6 1l1.35 2.73L10.5 4.1l-2.25 2.19.53 3.1L6 8l-2.78 1.39.53-3.1L1.5 4.1l3.15-.37z"/></svg></div>
+              </div>
+              <p class="product-card__price">Rs. 320</p>
+              <button class="btn btn--cream btn--full" data-name="Matka Kulfi">Add to Cart</button>
+            </div>
+          </article>
+        </div>
+        <div class="products-row">
+          <article class="product-card">
+            <div class="product-card__image-wrap">
+              <a href="../product.html">
+                <img src="https://www.figma.com/api/mcp/asset/2be5f15c-9802-46ed-89a6-b7725214fe1a" alt="Scoops Box (3 flavors)" loading="lazy" />
+              </a>
+              <span class="product-card__badge badge">Best Value</span>
+            </div>
+            <div class="product-card__body">
+              <div>
+                <h3 class="product-card__name"><a href="../product.html">Scoops Box (3 flavors)</a></h3>
+                <div class="stars" aria-label="4-5 stars"><svg class="star-svg" viewBox="0 0 12 12" fill="#c8a24a"><path d="M6 1l1.35 2.73L10.5 4.1l-2.25 2.19.53 3.1L6 8l-2.78 1.39.53-3.1L1.5 4.1l3.15-.37z"/></svg><svg class="star-svg" viewBox="0 0 12 12" fill="#c8a24a"><path d="M6 1l1.35 2.73L10.5 4.1l-2.25 2.19.53 3.1L6 8l-2.78 1.39.53-3.1L1.5 4.1l3.15-.37z"/></svg><svg class="star-svg" viewBox="0 0 12 12" fill="#c8a24a"><path d="M6 1l1.35 2.73L10.5 4.1l-2.25 2.19.53 3.1L6 8l-2.78 1.39.53-3.1L1.5 4.1l3.15-.37z"/></svg><svg class="star-svg" viewBox="0 0 12 12" fill="#c8a24a"><path d="M6 1l1.35 2.73L10.5 4.1l-2.25 2.19.53 3.1L6 8l-2.78 1.39.53-3.1L1.5 4.1l3.15-.37z"/></svg><svg class="star-svg" viewBox="0 0 12 12" fill="#e8d5b0"><path d="M6 1l1.35 2.73L10.5 4.1l-2.25 2.19.53 3.1L6 8l-2.78 1.39.53-3.1L1.5 4.1l3.15-.37z"/></svg></div>
+              </div>
+              <p class="product-card__price">Rs. 650</p>
+              <button class="btn btn--cream btn--full" data-name="Scoops Box (3 flavors)">Add to Cart</button>
+            </div>
+          </article>
+          <article class="product-card">
+            <div class="product-card__image-wrap">
+              <a href="../product.html">
+                <img src="https://www.figma.com/api/mcp/asset/0b407c32-c832-4772-8bb9-3d2854d441b7" alt="Chocolate Sundae" loading="lazy" />
+              </a>
+              <span class="product-card__badge badge">New</span>
+            </div>
+            <div class="product-card__body">
+              <div>
+                <h3 class="product-card__name"><a href="../product.html">Chocolate Sundae</a></h3>
+                <div class="stars" aria-label="4-5 stars"><svg class="star-svg" viewBox="0 0 12 12" fill="#c8a24a"><path d="M6 1l1.35 2.73L10.5 4.1l-2.25 2.19.53 3.1L6 8l-2.78 1.39.53-3.1L1.5 4.1l3.15-.37z"/></svg><svg class="star-svg" viewBox="0 0 12 12" fill="#c8a24a"><path d="M6 1l1.35 2.73L10.5 4.1l-2.25 2.19.53 3.1L6 8l-2.78 1.39.53-3.1L1.5 4.1l3.15-.37z"/></svg><svg class="star-svg" viewBox="0 0 12 12" fill="#c8a24a"><path d="M6 1l1.35 2.73L10.5 4.1l-2.25 2.19.53 3.1L6 8l-2.78 1.39.53-3.1L1.5 4.1l3.15-.37z"/></svg><svg class="star-svg" viewBox="0 0 12 12" fill="#c8a24a"><path d="M6 1l1.35 2.73L10.5 4.1l-2.25 2.19.53 3.1L6 8l-2.78 1.39.53-3.1L1.5 4.1l3.15-.37z"/></svg><svg class="star-svg" viewBox="0 0 12 12" fill="#e8d5b0"><path d="M6 1l1.35 2.73L10.5 4.1l-2.25 2.19.53 3.1L6 8l-2.78 1.39.53-3.1L1.5 4.1l3.15-.37z"/></svg></div>
+              </div>
+              <p class="product-card__price">Rs. 580</p>
+              <button class="btn btn--cream btn--full" data-name="Chocolate Sundae">Add to Cart</button>
+            </div>
+          </article>
+          <article class="product-card">
+            <div class="product-card__image-wrap">
+              <a href="../product.html">
+                <img src="https://www.figma.com/api/mcp/asset/95b975be-ab82-4ed9-a1da-1b6b104c5e6f" alt="Nutella Waffle" loading="lazy" />
+              </a>
+              <span class="product-card__badge badge">Chef Special</span>
+            </div>
+            <div class="product-card__body">
+              <div>
+                <h3 class="product-card__name"><a href="../product.html">Nutella Waffle</a></h3>
+                <div class="stars" aria-label="4-5 stars"><svg class="star-svg" viewBox="0 0 12 12" fill="#c8a24a"><path d="M6 1l1.35 2.73L10.5 4.1l-2.25 2.19.53 3.1L6 8l-2.78 1.39.53-3.1L1.5 4.1l3.15-.37z"/></svg><svg class="star-svg" viewBox="0 0 12 12" fill="#c8a24a"><path d="M6 1l1.35 2.73L10.5 4.1l-2.25 2.19.53 3.1L6 8l-2.78 1.39.53-3.1L1.5 4.1l3.15-.37z"/></svg><svg class="star-svg" viewBox="0 0 12 12" fill="#c8a24a"><path d="M6 1l1.35 2.73L10.5 4.1l-2.25 2.19.53 3.1L6 8l-2.78 1.39.53-3.1L1.5 4.1l3.15-.37z"/></svg><svg class="star-svg" viewBox="0 0 12 12" fill="#c8a24a"><path d="M6 1l1.35 2.73L10.5 4.1l-2.25 2.19.53 3.1L6 8l-2.78 1.39.53-3.1L1.5 4.1l3.15-.37z"/></svg><svg class="star-svg" viewBox="0 0 12 12" fill="#e8d5b0"><path d="M6 1l1.35 2.73L10.5 4.1l-2.25 2.19.53 3.1L6 8l-2.78 1.39.53-3.1L1.5 4.1l3.15-.37z"/></svg></div>
+              </div>
+              <p class="product-card__price">Rs. 680</p>
+              <button class="btn btn--cream btn--full" data-name="Nutella Waffle">Add to Cart</button>
+            </div>
+          </article>
+          <article class="product-card">
+            <div class="product-card__image-wrap">
+              <a href="../product.html">
+                <img src="https://www.figma.com/api/mcp/asset/e21b9cc3-e216-474a-bfdd-8ad8aa027f55" alt="Pistachio Ice Cream" loading="lazy" />
+              </a>
+              <span class="product-card__badge badge">Premium</span>
+            </div>
+            <div class="product-card__body">
+              <div>
+                <h3 class="product-card__name"><a href="../product.html">Pistachio Ice Cream</a></h3>
+                <div class="stars" aria-label="4-5 stars"><svg class="star-svg" viewBox="0 0 12 12" fill="#c8a24a"><path d="M6 1l1.35 2.73L10.5 4.1l-2.25 2.19.53 3.1L6 8l-2.78 1.39.53-3.1L1.5 4.1l3.15-.37z"/></svg><svg class="star-svg" viewBox="0 0 12 12" fill="#c8a24a"><path d="M6 1l1.35 2.73L10.5 4.1l-2.25 2.19.53 3.1L6 8l-2.78 1.39.53-3.1L1.5 4.1l3.15-.37z"/></svg><svg class="star-svg" viewBox="0 0 12 12" fill="#c8a24a"><path d="M6 1l1.35 2.73L10.5 4.1l-2.25 2.19.53 3.1L6 8l-2.78 1.39.53-3.1L1.5 4.1l3.15-.37z"/></svg><svg class="star-svg" viewBox="0 0 12 12" fill="#c8a24a"><path d="M6 1l1.35 2.73L10.5 4.1l-2.25 2.19.53 3.1L6 8l-2.78 1.39.53-3.1L1.5 4.1l3.15-.37z"/></svg><svg class="star-svg" viewBox="0 0 12 12" fill="#e8d5b0"><path d="M6 1l1.35 2.73L10.5 4.1l-2.25 2.19.53 3.1L6 8l-2.78 1.39.53-3.1L1.5 4.1l3.15-.37z"/></svg></div>
+              </div>
+              <p class="product-card__price">Rs. 420</p>
+              <button class="btn btn--cream btn--full" data-name="Pistachio Ice Cream">Add to Cart</button>
+            </div>
+          </article>
+        </div>
+        <div class="products-row">
+          <article class="product-card">
+            <div class="product-card__image-wrap">
+              <a href="../product.html">
+                <img src="https://www.figma.com/api/mcp/asset/b75ed794-dbc5-4957-a8c3-cabc6dcc4d08" alt="Ras Malai Cheesecake" loading="lazy" />
+              </a>
+              <span class="product-card__badge badge">New</span>
+            </div>
+            <div class="product-card__body">
+              <div>
+                <h3 class="product-card__name"><a href="../product.html">Ras Malai Cheesecake</a></h3>
+                <div class="stars" aria-label="4-5 stars"><svg class="star-svg" viewBox="0 0 12 12" fill="#c8a24a"><path d="M6 1l1.35 2.73L10.5 4.1l-2.25 2.19.53 3.1L6 8l-2.78 1.39.53-3.1L1.5 4.1l3.15-.37z"/></svg><svg class="star-svg" viewBox="0 0 12 12" fill="#c8a24a"><path d="M6 1l1.35 2.73L10.5 4.1l-2.25 2.19.53 3.1L6 8l-2.78 1.39.53-3.1L1.5 4.1l3.15-.37z"/></svg><svg class="star-svg" viewBox="0 0 12 12" fill="#c8a24a"><path d="M6 1l1.35 2.73L10.5 4.1l-2.25 2.19.53 3.1L6 8l-2.78 1.39.53-3.1L1.5 4.1l3.15-.37z"/></svg><svg class="star-svg" viewBox="0 0 12 12" fill="#c8a24a"><path d="M6 1l1.35 2.73L10.5 4.1l-2.25 2.19.53 3.1L6 8l-2.78 1.39.53-3.1L1.5 4.1l3.15-.37z"/></svg><svg class="star-svg" viewBox="0 0 12 12" fill="#e8d5b0"><path d="M6 1l1.35 2.73L10.5 4.1l-2.25 2.19.53 3.1L6 8l-2.78 1.39.53-3.1L1.5 4.1l3.15-.37z"/></svg></div>
+              </div>
+              <p class="product-card__price">Rs. 2,800</p>
+              <button class="btn btn--cream btn--full" data-name="Ras Malai Cheesecake">Add to Cart</button>
+            </div>
+          </article>
+          <article class="product-card">
+            <div class="product-card__image-wrap">
+              <a href="../product.html">
+                <img src="https://www.figma.com/api/mcp/asset/12dacda6-cf1b-49ce-8be0-6d6cf2ea4a3a" alt="Mango Sorbet (500ml)" loading="lazy" />
+              </a>
+              <span class="product-card__badge badge">Seasonal</span>
+            </div>
+            <div class="product-card__body">
+              <div>
+                <h3 class="product-card__name"><a href="../product.html">Mango Sorbet (500ml)</a></h3>
+                <div class="stars" aria-label="4-5 stars"><svg class="star-svg" viewBox="0 0 12 12" fill="#c8a24a"><path d="M6 1l1.35 2.73L10.5 4.1l-2.25 2.19.53 3.1L6 8l-2.78 1.39.53-3.1L1.5 4.1l3.15-.37z"/></svg><svg class="star-svg" viewBox="0 0 12 12" fill="#c8a24a"><path d="M6 1l1.35 2.73L10.5 4.1l-2.25 2.19.53 3.1L6 8l-2.78 1.39.53-3.1L1.5 4.1l3.15-.37z"/></svg><svg class="star-svg" viewBox="0 0 12 12" fill="#c8a24a"><path d="M6 1l1.35 2.73L10.5 4.1l-2.25 2.19.53 3.1L6 8l-2.78 1.39.53-3.1L1.5 4.1l3.15-.37z"/></svg><svg class="star-svg" viewBox="0 0 12 12" fill="#c8a24a"><path d="M6 1l1.35 2.73L10.5 4.1l-2.25 2.19.53 3.1L6 8l-2.78 1.39.53-3.1L1.5 4.1l3.15-.37z"/></svg><svg class="star-svg" viewBox="0 0 12 12" fill="#e8d5b0"><path d="M6 1l1.35 2.73L10.5 4.1l-2.25 2.19.53 3.1L6 8l-2.78 1.39.53-3.1L1.5 4.1l3.15-.37z"/></svg></div>
+              </div>
+              <p class="product-card__price">Rs. 520</p>
+              <button class="btn btn--cream btn--full" data-name="Mango Sorbet (500ml)">Add to Cart</button>
+            </div>
+          </article>
+          <article class="product-card">
+            <div class="product-card__image-wrap">
+              <a href="../product.html">
+                <img src="https://www.figma.com/api/mcp/asset/9a438baf-e25a-4041-8b5b-673617f934bf" alt="Creamy Biscoff Cups" loading="lazy" />
+              </a>
+              
+            </div>
+            <div class="product-card__body">
+              <div>
+                <h3 class="product-card__name"><a href="../product.html">Creamy Biscoff Cups</a></h3>
+                <div class="stars" aria-label="4-5 stars"><svg class="star-svg" viewBox="0 0 12 12" fill="#c8a24a"><path d="M6 1l1.35 2.73L10.5 4.1l-2.25 2.19.53 3.1L6 8l-2.78 1.39.53-3.1L1.5 4.1l3.15-.37z"/></svg><svg class="star-svg" viewBox="0 0 12 12" fill="#c8a24a"><path d="M6 1l1.35 2.73L10.5 4.1l-2.25 2.19.53 3.1L6 8l-2.78 1.39.53-3.1L1.5 4.1l3.15-.37z"/></svg><svg class="star-svg" viewBox="0 0 12 12" fill="#c8a24a"><path d="M6 1l1.35 2.73L10.5 4.1l-2.25 2.19.53 3.1L6 8l-2.78 1.39.53-3.1L1.5 4.1l3.15-.37z"/></svg><svg class="star-svg" viewBox="0 0 12 12" fill="#c8a24a"><path d="M6 1l1.35 2.73L10.5 4.1l-2.25 2.19.53 3.1L6 8l-2.78 1.39.53-3.1L1.5 4.1l3.15-.37z"/></svg><svg class="star-svg" viewBox="0 0 12 12" fill="#e8d5b0"><path d="M6 1l1.35 2.73L10.5 4.1l-2.25 2.19.53 3.1L6 8l-2.78 1.39.53-3.1L1.5 4.1l3.15-.37z"/></svg></div>
+              </div>
+              <p class="product-card__price">Rs. 350</p>
+              <button class="btn btn--cream btn--full" data-name="Creamy Biscoff Cups">Add to Cart</button>
+            </div>
+          </article>
+          <article class="product-card">
+            <div class="product-card__image-wrap">
+              <a href="../product.html">
+                <img src="https://www.figma.com/api/mcp/asset/05c94319-939a-4735-aa70-442c52c0ff46" alt="Lychee Ice Cream" loading="lazy" />
+              </a>
+              
+            </div>
+            <div class="product-card__body">
+              <div>
+                <h3 class="product-card__name"><a href="../product.html">Lychee Ice Cream</a></h3>
+                <div class="stars" aria-label="4-5 stars"><svg class="star-svg" viewBox="0 0 12 12" fill="#c8a24a"><path d="M6 1l1.35 2.73L10.5 4.1l-2.25 2.19.53 3.1L6 8l-2.78 1.39.53-3.1L1.5 4.1l3.15-.37z"/></svg><svg class="star-svg" viewBox="0 0 12 12" fill="#c8a24a"><path d="M6 1l1.35 2.73L10.5 4.1l-2.25 2.19.53 3.1L6 8l-2.78 1.39.53-3.1L1.5 4.1l3.15-.37z"/></svg><svg class="star-svg" viewBox="0 0 12 12" fill="#c8a24a"><path d="M6 1l1.35 2.73L10.5 4.1l-2.25 2.19.53 3.1L6 8l-2.78 1.39.53-3.1L1.5 4.1l3.15-.37z"/></svg><svg class="star-svg" viewBox="0 0 12 12" fill="#c8a24a"><path d="M6 1l1.35 2.73L10.5 4.1l-2.25 2.19.53 3.1L6 8l-2.78 1.39.53-3.1L1.5 4.1l3.15-.37z"/></svg><svg class="star-svg" viewBox="0 0 12 12" fill="#e8d5b0"><path d="M6 1l1.35 2.73L10.5 4.1l-2.25 2.19.53 3.1L6 8l-2.78 1.39.53-3.1L1.5 4.1l3.15-.37z"/></svg></div>
+              </div>
+              <p class="product-card__price">Rs. 400</p>
+              <button class="btn btn--cream btn--full" data-name="Lychee Ice Cream">Add to Cart</button>
+            </div>
+          </article>
+        </div>
+
+      <!-- Pagination -->
+      <nav class="pagination" aria-label="Page navigation">
+        <button class="pagination__btn pagination__btn--active" aria-current="page" aria-label="Page 1">1</button>
+        <button class="pagination__btn" aria-label="Page 2">2</button>
+        <button class="pagination__btn" aria-label="Page 3">3</button>
+        <button class="pagination__btn" aria-label="More pages">&hellip;</button>
+      </nav>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="site-footer__grid">
+      <div>
+        <p class="site-footer__brand-name">AZMEER BAKERY</p>
+        <p class="site-footer__tagline">Crafting the finest South Asian fusion delights. Every bite is a story of heritage and love, delivered fresh to your doorstep.</p>
+        <div class="footer-socials">
+          <a href="#" class="footer-socials__btn" aria-label="Instagram">
+            <svg viewBox="0 0 20 20" fill="none" stroke="white" stroke-width="1.8" width="20" height="20"><rect x="2" y="2" width="16" height="16" rx="5" ry="5"/><circle cx="10" cy="10" r="3.5"/><circle cx="14.5" cy="5.5" r="1" fill="white" stroke="none"/></svg>
+          </a>
+          <a href="#" class="footer-socials__btn" aria-label="Facebook">
+            <svg viewBox="0 0 20 20" fill="white" width="20" height="20"><path d="M15 2h-2.5A4.5 4.5 0 0 0 8 6.5V9H5v3h3v6h3v-6h3l.5-3H11V6.5A1.5 1.5 0 0 1 12.5 5H15z"/></svg>
+          </a>
+          <a href="#" class="footer-socials__btn" aria-label="Twitter">
+            <svg viewBox="0 0 20 20" fill="white" width="20" height="20"><path d="M17.3 4.2 12 9.6 17.6 16h-3.4l-4-5.4-4.6 5.4H2.4l5.6-6.6L2.4 4.2h3.4l3.7 5 4.4-5h3.4z"/></svg>
+          </a>
+        </div>
+      </div>
+      <div>
+        <h3 class="footer-col__heading">Quick Links</h3>
+        <ul class="footer-links">
+          <li><a href="#" class="footer-links__item">Our Story</a></li>
+          <li><a href="../listing.html" class="footer-links__item">Shop All</a></li>
+          <li><a href="sweets.html" class="footer-links__item">Sweets</a></li>
+          <li><a href="#" class="footer-links__item">Ramadan Specials</a></li>
+          <li><a href="#" class="footer-links__item">Track Order</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="footer-col__heading">Contact Info</h3>
+        <div class="flex flex-col gap-12">
+          <div class="footer-contact-row">
+            <svg viewBox="0 0 16 16" fill="none" stroke="#fff6e5" stroke-width="1.5" width="16" height="16"><path d="M8 1.3a5 5 0 0 0-5 5c0 3.75 5 9.4 5 9.4s5-5.65 5-9.4a5 5 0 0 0-5-5z"/><circle cx="8" cy="6.3" r="2"/></svg>
+            <span>45 Main Blvd, Gulberg III, Lahore</span>
+          </div>
+          <div class="footer-contact-row">
+            <svg viewBox="0 0 16 16" fill="none" stroke="#fff6e5" stroke-width="1.5" width="16" height="16"><path d="M13.3 10.7l-2-1.7a1 1 0 0 0-1.3.1l-.8.8a8.5 8.5 0 0 1-3.1-3.1l.8-.8a1 1 0 0 0 .1-1.3L5.3 2.7A1 1 0 0 0 4 2.5L2.8 3.7A2 2 0 0 0 2.4 6C3.6 9.8 6.2 12.4 10 13.6a2 2 0 0 0 2.3-.4l1.2-1.2a1 1 0 0 0-.2-1.3z"/></svg>
+            <span>+92 42 3571 8899</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-divider"></div>
+    <p class="footer-copy">&copy; 2024 Azmeer Bakery. All rights reserved. Designed with Love.</p>
+  </footer>
+
+  <a href="https://wa.me/923001234567" class="whatsapp-fab" aria-label="Chat on WhatsApp" target="_blank" rel="noopener">
+    <svg viewBox="0 0 32 32" fill="white" width="32" height="32">
+      <path d="M16 3C9 3 3 9 3 16c0 2.3.6 4.5 1.7 6.4L3 29l6.8-1.7C11.5 28.4 13.7 29 16 29c7 0 13-6 13-13S23 3 16 3zm6.6 18.6c-.3.8-1.5 1.5-2.1 1.6-.6.1-1.2.1-4.1-1.2-3.4-1.5-5.6-5-5.8-5.2-.2-.2-1.5-2-.9-3.7.5-1.7 1.8-1.9 2.3-1.9h.7c.3 0 .6.2.8.7l1 2.5c.2.4.1.8-.1 1.1l-.6.8c-.2.2-.2.5 0 .7.8 1.2 1.8 2 3.1 2.7.3.2.6.1.8-.1l.7-.9c.2-.3.6-.4.9-.3l2.4 1.2c.5.2.7.5.7.9l.2 1z"/>
+    </svg>
+  </a>
+
+  <script src="../js/script.js"></script>
+  <script>
+    // ── Category page JS ─────────────────────────────────────────
+    'use strict';
+
+    // Filter pills
+    document.querySelectorAll('.filter-pill').forEach(pill => {
+      pill.addEventListener('click', function() {
+        document.querySelectorAll('.filter-pill').forEach(p => p.classList.remove('is-active'));
+        this.classList.add('is-active');
+        // Update active filter tag
+        const tag = document.querySelector('.active-filter-tag');
+        if (tag) tag.textContent = this.dataset.filter + ' ×';
+      });
+    });
+
+    // Remove active filter on tag click
+    document.querySelectorAll('.active-filter-tag').forEach(tag => {
+      tag.addEventListener('click', function() {
+        this.remove();
+        document.querySelectorAll('.filter-pill').forEach(p => p.classList.remove('is-active'));
+        document.querySelector('.filter-pill')?.classList.add('is-active');
+      });
+    });
+
+    // Grid / List view toggle
+    const gridBtn = document.getElementById('gridViewBtn');
+    const listBtn = document.getElementById('listViewBtn');
+    const section = document.getElementById('productsSection');
+
+    gridBtn?.addEventListener('click', () => {
+      section.classList.remove('list-view');
+      gridBtn.classList.add('is-active');
+      listBtn.classList.remove('is-active');
+      gridBtn.setAttribute('aria-pressed','true');
+      listBtn.setAttribute('aria-pressed','false');
+    });
+
+    listBtn?.addEventListener('click', () => {
+      section.classList.add('list-view');
+      listBtn.classList.add('is-active');
+      gridBtn.classList.remove('is-active');
+      listBtn.setAttribute('aria-pressed','true');
+      gridBtn.setAttribute('aria-pressed','false');
+    });
+
+    // Add to cart on product cards
+    document.querySelectorAll('.products-section .btn--cream').forEach(btn => {
+      btn.addEventListener('click', function() {
+        const name = this.dataset.name || 'Item';
+        // Show toast (from script.js)
+        if (typeof showToast === 'function') showToast('"' + name + '" added to cart!');
+        const orig = this.textContent;
+        this.textContent = 'Added ✓';
+        this.style.background = 'var(--clr-brown)';
+        this.style.color = 'var(--clr-cream)';
+        setTimeout(() => {
+          this.textContent = orig;
+          this.style.background = '';
+          this.style.color = '';
+        }, 1200);
+      });
+    });
+  </script>
+</body>
+</html>

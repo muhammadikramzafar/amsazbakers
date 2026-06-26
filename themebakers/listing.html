@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cakes &amp; Pastries — Azmeer Bakery</title>
+  <meta name="description" content="Browse our full range of cakes, pastries, and baked goods. Filter by category, price, and more." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&family=DM+Sans:wght@400;600;700;800&family=Inter:wght@800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- ===== HEADER ===== -->
+  <header class="site-header">
+    <nav class="site-header__nav">
+      <a href="index.html" class="site-header__logo">AZMEER BAKERY</a>
+
+      <div class="search-bar" role="search">
+        <svg class="search-bar__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
+        </svg>
+        <input class="search-bar__input" type="search" placeholder="Search for cakes, sweets, pastries..." aria-label="Search products" />
+      </div>
+
+      <div class="header-controls">
+        <div class="lang-switcher">
+          <span class="lang-switcher__active">EN</span>
+          <div class="lang-switcher__divider"></div>
+          <span class="lang-switcher__inactive">URDU</span>
+        </div>
+        <div class="header-icons">
+          <button class="header-icon-btn" aria-label="Account">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" width="24" height="24">
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/>
+            </svg>
+          </button>
+          <div class="cart-wrapper">
+            <button class="header-icon-btn" aria-label="Shopping bag">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" width="24" height="24">
+                <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/>
+              </svg>
+            </button>
+            <span class="cart-badge" aria-label="3 items in cart">3</span>
+          </div>
+        </div>
+      </div>
+
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobile-nav">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+    <div class="delivery-strip">
+      Free delivery on orders above Rs. 999 &mdash; Same-day delivery available
+    </div>
+  </header>
+
+  <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile navigation">
+    <div class="search-bar mobile-nav__search" role="search">
+      <svg class="search-bar__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
+      </svg>
+      <input class="search-bar__input" type="search" placeholder="Search..." aria-label="Search products" />
+    </div>
+    <div class="mobile-nav__links">
+      <a href="index.html" class="mobile-nav__link">Home</a>
+      <a href="listing.html" class="mobile-nav__link">Shop All</a>
+      <a href="product.html" class="mobile-nav__link">Cakes</a>
+      <a href="#" class="mobile-nav__link">Deals</a>
+    </div>
+  </nav>
+
+  <div class="header-spacer"></div>
+
+  <main>
+
+    <!-- ===== PAGE BANNER ===== -->
+    <section class="page-banner" aria-label="Category banner">
+      <div>
+        <p class="page-banner__breadcrumb">Home / Products / Cakes</p>
+        <h1 class="page-banner__title">Cakes &amp; Pastries</h1>
+        <span class="gold-rule gold-rule--lg" aria-hidden="true"></span>
+      </div>
+    </section>
+
+    <!-- ===== LISTING ===== -->
+    <section class="listing-section" aria-label="Product listing">
+
+      <!-- Sidebar -->
+      <aside class="filter-sidebar" aria-label="Filters">
+        <h2 class="filter-sidebar__title">Filter By</h2>
+
+        <!-- Price Range -->
+        <div class="filter-group">
+          <p class="filter-group__label">Price Range</p>
+          <div class="price-range">
+            <div class="price-range__track">
+              <div class="price-range__fill"></div>
+            </div>
+            <p class="price-range__labels">Rs. 200 — Rs. 5000</p>
+          </div>
+          <input type="range" min="200" max="5000" value="2500" style="width:100%; accent-color: var(--clr-primary); margin-top:8px;" aria-label="Price range" />
+        </div>
+
+        <!-- Categories -->
+        <div class="filter-group">
+          <p class="filter-group__label">Categories</p>
+          <label class="filter-check">
+            <input type="checkbox" name="cat" value="birthday" />
+            <span class="filter-check__label">Birthday Cakes</span>
+          </label>
+          <label class="filter-check">
+            <input type="checkbox" name="cat" value="fusion" checked />
+            <span class="filter-check__label">Fusion Cakes</span>
+          </label>
+          <label class="filter-check">
+            <input type="checkbox" name="cat" value="tea" />
+            <span class="filter-check__label">Tea Cakes</span>
+          </label>
+          <label class="filter-check">
+            <input type="checkbox" name="cat" value="pastries" />
+            <span class="filter-check__label">Pastries</span>
+          </label>
+        </div>
+
+        <!-- Rating Filter -->
+        <div class="filter-group">
+          <p class="filter-group__label">Rating</p>
+          <label class="filter-check">
+            <input type="checkbox" name="rating" value="5" />
+            <span class="filter-check__label">★★★★★ (5 Stars)</span>
+          </label>
+          <label class="filter-check">
+            <input type="checkbox" name="rating" value="4" checked />
+            <span class="filter-check__label">★★★★☆ (4+ Stars)</span>
+          </label>
+        </div>
+
+        <button class="btn btn--primary btn--full" id="applyFilters">Apply Filters</button>
+      </aside>
+
+      <!-- Main content -->
+      <div class="listing-main">
+
+        <!-- Mobile filter toggle -->
+        <button class="filter-toggle-btn" id="filterToggle" aria-expanded="false" aria-controls="filter-sidebar-mobile">
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" width="16" height="16">
+            <line x1="2" y1="4" x2="14" y2="4"/><line x1="2" y1="8" x2="14" y2="8"/><line x1="2" y1="12" x2="14" y2="12"/>
+          </svg>
+          Filter &amp; Sort
+        </button>
+
+        <!-- Toolbar -->
+        <div class="listing-toolbar">
+          <p class="listing-count">Showing 1–9 of 24 results</p>
+          <div class="sort-select-wrap">
+            <select aria-label="Sort products">
+              <option>Sort by: Popularity</option>
+              <option>Price: Low to High</option>
+              <option>Price: High to Low</option>
+              <option>Newest First</option>
+              <option>Best Rated</option>
+            </select>
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" width="16" height="16" aria-hidden="true">
+              <polyline points="4,6 8,10 12,6"/>
+            </svg>
+          </div>
+        </div>
+
+        <!-- Product Grid -->
+        <div class="product-grid-3" role="list">
+
+          <!-- Row 1 -->
+          <article class="product-card" role="listitem">
+            <div class="product-card__image-wrap">
+              <a href="product.html">
+                <img src="https://www.figma.com/api/mcp/asset/cb14d45f-cc70-40cc-a429-f50116ed2fda" alt="Pistachio Rose Cake" loading="lazy" />
+              </a>
+              <span class="product-card__badge badge">Bestseller</span>
+            </div>
+            <div class="product-card__body">
+              <div>
+                <h3 class="product-card__name"><a href="product.html">Pistachio Rose Cake</a></h3>
+                <div class="stars" aria-label="5 stars">
+                  <svg class="star-svg" viewBox="0 0 12 12" fill="#c8a24a"><path d="M6 1l1.35 2.73L10.5 4.1l-2.25 2.19.53 3.1L6 8l-2.78 1.39.53-3.1L1.5 4.1l3.15-.37z"/></svg>
+                  <svg class="star-svg" viewBox="0 0 12 12" fill="#c8a24a"><path d="M6 1l1.35 2.73L10.5 4.1l-2.25 2.19.53 3.1L6 8l-2.78 1.39.53-3.1L1.5 4.1l3.15-.37z"/></svg>
+                  <svg class="star-svg" viewBox="0 0 12 12" fill="#c8a24a"><path d="M6 1l1.35 2.73L10.5 4.1l-2.25 2.19.53 3.1L6 8l-2.78 1.39.53-3.1L1.5 4.1l3.15-.37z"/></svg>
+                  <svg class="star-svg" viewBox="0 0 12 12" fill="#c8a24a"><path d="M6 1l1.35 2.73L10.5 4.1l-2.25 2.19.53 3.1L6 8l-2.78 1.39.53-3.1L1.5 4.1l3.15-.37z"/></svg>
+                  <svg class="star-svg" viewBox="0 0 12 12" fill="#c8a24a"><path d="M6 1l1.35 2.73L10.5 4.1l-2.25 2.19.53 3.1L6 8l-2.78 1.39.53-3.1L1.5 4.1l3.15-.37z"/></svg>
+                </div>
+              </div>
+              <p class="product-card__price">Rs. 3,800</p>
+              <button class="btn btn--cream btn--full">Add to Cart</button>
+            </div>
+          </article>
+
+          <article class="product-card" role="listitem">
+            <div class="product-card__image-wrap">
+              <a href="product.html">
+                <img src="https://www.figma.com/api/mcp/asset/48b914d2-479d-49e5-8b42-60ce628d2699" alt="Cardamom Fudge" loading="lazy" />
+              </a>
+            </div>
+            <div class="product-card__body">
+              <div>
+                <h3 class="product-card__name"><a href="product.html">Cardamom Fudge</a></h3>
+                <div class="stars" aria-label="4 stars">
+                  <svg class="star-svg" viewBox="0 0 12 12" fill="#c8a24a"><path d="M6 1l1.35 2.73L10.5 4.1l-2.25 2.19.53 3.1L6 8l-2.78 1.39.53-3.1L1.5 4.1l3.15-.37z"/></svg>
+                  <svg class="star-svg" viewBox="0 0 12 12" fill="#c8a24a"><path d="M6 1l1.35 2.73L10.5 4.1l-2.25 2.19.53 3.1L6 8l-2.78 1.39.53-3.1L1.5 4.1l3.15-.37z"/></svg>
+                  <svg class="star-svg" viewBox="0 0 12 12" fill="#c8a24a"><path d="M6 1l1.35 2.73L10.5 4.1l-2.25 2.19.53 3.1L6 8l-2.78 1.39.53-3.1L1.5 4.1l3.15-.37z"/></svg>
+                  <svg class="star-svg" viewBox="0 0 12 12" fill="#c8a24a"><path d="M6 1l1.35 2.73L10.5 4.1l-2.25 2.19.53 3.1L6 8l-2.78 1.39.53-3.1L1.5 4.1l3.15-.37z"/></svg>
+                  <svg class="star-svg" viewBox="0 0 12 12" fill="#e8d5b0"><path d="M6 1l1.35 2.73L10.5 4.1l-2.25 2.19.53 3.1L6 8l-2.78 1.39.53-3.1L1.5 4.1l3.15-.37z"/></svg>
+                </div>
+              </div>
+              <p class="product-card__price">Rs. 2,900</p>
+              <button class="btn btn--cream btn--full">Add to Cart</button>
+            </div>
+          </article>
+
+          <article class="product-card" role="listitem">
+            <div class="product-card__image-wrap">
+              <a href="product.html">
+                <img src="https://www.figma.com/api/mcp/asset/a8cecb80-40a1-4e82-8aa6-b87b4c636374" alt="Saffron Milk Cake" loading="lazy" />
+              </a>
+              <span class="product-card__badge badge">New</span>
+            </div>
+            <div class="product-card__body">
+              <div>
+                <h3 class="product-card__name"><a href="product.html">Saffron Milk Cake</a></h3>
+                <div class="stars" aria-label="5 stars">
+                  <svg class="star-svg" viewBox="0 0 12 12" fill="#c8a24a"><path d="M6 1l1.35 2.73L10.5 4.1l-2.25 2.19.53 3.1L6 8l-2.78 1.39.53-3.1L1.5 4.1l3.15-.37z"/></svg>
+                  <svg class="star-svg" viewBox="0 0 12 12" fill="#c8a24a"><path d="M6 1l1.35 2.73L10.5 4.1l-2.25 2.19.53 3.1L6 8l-2.78 1.39.53-3.1L1.5 4.1l3.15-.37z"/></svg>
+                  <svg class="star-svg" viewBox="0 0 12 12" fill="#c8a24a"><path d="M6 1l1.35 2.73L10.5 4.1l-2.25 2.19.53 3.1L6 8l-2.78 1.39.53-3.1L1.5 4.1l3.15-.37z"/></svg>
+                  <svg class="star-svg" viewBox="0 0 12 12" fill="#c8a24a"><path d="M6 1l1.35 2.73L10.5 4.1l-2.25 2.19.53 3.1L6 8l-2.78 1.39.53-3.1L1.5 4.1l3.15-.37z"/></svg>
+                  <svg class="star-svg" viewBox="0 0 12 12" fill="#c8a24a"><path d="M6 1l1.35 2.73L10.5 4.1l-2.25 2.19.53 3.1L6 8l-2.78 1.39.53-3.1L1.5 4.1l3.15-.37z"/></svg>
+                </div>
+              </div>
+              <p class="product-card__price">Rs. 3,200</p>
+              <button class="btn btn--cream btn--full">Add to Cart</button>
+            </div>
+          </article>
+
+          <!-- Row 2 -->
+          <article class="product-card" role="listitem">
+            <div class="product-card__image-wrap">
+              <a href="product.html">
+                <img src="https://www.figma.com/api/mcp/asset/75ddeb8c-2c45-4cd4-9572-2e8ec44fe840" alt="Pistachio Rose Cake" loading="lazy" />
+              </a>
+              <span class="product-card__badge badge">Bestseller</span>
+            </div>
+            <div class="product-card__body">
+              <div>
+                <h3 class="product-card__name"><a href="product.html">Pistachio Rose Cake</a></h3>
+                <div class="stars" aria-label="5 stars">
+                  <svg class="star-svg" viewBox="0 0 12 12" fill="#c8a24a"><path d="M6 1l1.35 2.73L10.5 4.1l-2.25 2.19.53 3.1L6 8l-2.78 1.39.53-3.1L1.5 4.1l3.15-.37z"/></svg>
+                  <svg class="star-svg" viewBox="0 0 12 12" fill="#c8a24a"><path d="M6 1l1.35 2.73L10.5 4.1l-2.25 2.19.53 3.1L6 8l-2.78 1.39.53-3.1L1.5 4.1l3.15-.37z"/></svg>
+                  <svg class="star-svg" viewBox="0 0 12 12" fill="#c8a24a"><path d="M6 1l1.35 2.73L10.5 4.1l-2.25 2.19.53 3.1L6 8l-2.78 1.39.53-3.1L1.5 4.1l3.15-.37z"/></svg>
+                  <svg class="star-svg" viewBox="0 0 12 12" fill="#c8a24a"><path d="M6 1l1.35 2.73L10.5 4.1l-2.25 2.19.53 3.1L6 8l-2.78 1.39.53-3.1L1.5 4.1l3.15-.37z"/></svg>
+                  <svg class="star-svg" viewBox="0 0 12 12" fill="#c8a24a"><path d="M6 1l1.35 2.73L10.5 4.1l-2.25 2.19.53 3.1L6 8l-2.78 1.39.53-3.1L1.5 4.1l3.15-.37z"/></svg>
+                </div>
+              </div>
+              <p class="product-card__price">Rs. 3,800</p>
+              <button class="btn btn--cream btn--full">Add to Cart</button>
+            </div>
+          </article>
+
+          <article class="product-card" role="listitem">
+            <div class="product-card__image-wrap">
+              <a href="product.html">
+                <img src="https://www.figma.com/api/mcp/asset/aa90c0c2-204f-4118-9cdf-d37993a18217" alt="Cardamom Fudge" loading="lazy" />
+              </a>
+            </div>
+            <div class="product-card__body">
+              <div>
+                <h3 class="product-card__name"><a href="product.html">Cardamom Fudge</a></h3>
+                <div class="stars" aria-label="4 stars">
+                  <svg class="star-svg" viewBox="0 0 12 12" fill="#c8a24a"><path d="M6 1l1.35 2.73L10.5 4.1l-2.25 2.19.53 3.1L6 8l-2.78 1.39.53-3.1L1.5 4.1l3.15-.37z"/></svg>
+                  <svg class="star-svg" viewBox="0 0 12 12" fill="#c8a24a"><path d="M6 1l1.35 2.73L10.5 4.1l-2.25 2.19.53 3.1L6 8l-2.78 1.39.53-3.1L1.5 4.1l3.15-.37z"/></svg>
+                  <svg class="star-svg" viewBox="0 0 12 12" fill="#c8a24a"><path d="M6 1l1.35 2.73L10.5 4.1l-2.25 2.19.53 3.1L6 8l-2.78 1.39.53-3.1L1.5 4.1l3.15-.37z"/></svg>
+                  <svg class="star-svg" viewBox="0 0 12 12" fill="#c8a24a"><path d="M6 1l1.35 2.73L10.5 4.1l-2.25 2.19.53 3.1L6 8l-2.78 1.39.53-3.1L1.5 4.1l3.15-.37z"/></svg>
+                  <svg class="star-svg" viewBox="0 0 12 12" fill="#e8d5b0"><path d="M6 1l1.35 2.73L10.5 4.1l-2.25 2.19.53 3.1L6 8l-2.78 1.39.53-3.1L1.5 4.1l3.15-.37z"/></svg>
+                </div>
+              </div>
+              <p class="product-card__price">Rs. 2,900</p>
+              <button class="btn btn--cream btn--full">Add to Cart</button>
+            </div>
+          </article>
+
+          <article class="product-card" role="listitem">
+            <div class="product-card__image-wrap">
+              <a href="product.html">
+                <img src="https://www.figma.com/api/mcp/asset/4d14e353-a5dd-453f-a2d9-bf6941fb494f" alt="Saffron Milk Cake" loading="lazy" />
+              </a>
+              <span class="product-card__badge badge">New</span>
+            </div>
+            <div class="product-card__body">
+              <div>
+                <h3 class="product-card__name"><a href="product.html">Saffron Milk Cake</a></h3>
+                <div class="stars" aria-label="5 stars">
+                  <svg class="star-svg" viewBox="0 0 12 12" fill="#c8a24a"><path d="M6 1l1.35 2.73L10.5 4.1l-2.25 2.19.53 3.1L6 8l-2.78 1.39.53-3.1L1.5 4.1l3.15-.37z"/></svg>
+                  <svg class="star-svg" viewBox="0 0 12 12" fill="#c8a24a"><path d="M6 1l1.35 2.73L10.5 4.1l-2.25 2.19.53 3.1L6 8l-2.78 1.39.53-3.1L1.5 4.1l3.15-.37z"/></svg>
+                  <svg class="star-svg" viewBox="0 0 12 12" fill="#c8a24a"><path d="M6 1l1.35 2.73L10.5 4.1l-2.25 2.19.53 3.1L6 8l-2.78 1.39.53-3.1L1.5 4.1l3.15-.37z"/></svg>
+                  <svg class="star-svg" viewBox="0 0 12 12" fill="#c8a24a"><path d="M6 1l1.35 2.73L10.5 4.1l-2.25 2.19.53 3.1L6 8l-2.78 1.39.53-3.1L1.5 4.1l3.15-.37z"/></svg>
+                  <svg class="star-svg" viewBox="0 0 12 12" fill="#c8a24a"><path d="M6 1l1.35 2.73L10.5 4.1l-2.25 2.19.53 3.1L6 8l-2.78 1.39.53-3.1L1.5 4.1l3.15-.37z"/></svg>
+                </div>
+              </div>
+              <p class="product-card__price">Rs. 3,200</p>
+              <button class="btn btn--cream btn--full">Add to Cart</button>
+            </div>
+          </article>
+
+          <!-- Row 3 -->
+          <article class="product-card" role="listitem">
+            <div class="product-card__image-wrap">
+              <a href="product.html">
+                <img src="https://www.figma.com/api/mcp/asset/f5bbd5be-a9fe-4167-9974-0470bb05b08e" alt="Pistachio Rose Cake" loading="lazy" />
+              </a>
+              <span class="product-card__badge badge">Bestseller</span>
+            </div>
+            <div class="product-card__body">
+              <div>
+                <h3 class="product-card__name"><a href="product.html">Pistachio Rose Cake</a></h3>
+                <div class="stars" aria-label="5 stars">
+                  <svg class="star-svg" viewBox="0 0 12 12" fill="#c8a24a"><path d="M6 1l1.35 2.73L10.5 4.1l-2.25 2.19.53 3.1L6 8l-2.78 1.39.53-3.1L1.5 4.1l3.15-.37z"/></svg>
+                  <svg class="star-svg" viewBox="0 0 12 12" fill="#c8a24a"><path d="M6 1l1.35 2.73L10.5 4.1l-2.25 2.19.53 3.1L6 8l-2.78 1.39.53-3.1L1.5 4.1l3.15-.37z"/></svg>
+                  <svg class="star-svg" viewBox="0 0 12 12" fill="#c8a24a"><path d="M6 1l1.35 2.73L10.5 4.1l-2.25 2.19.53 3.1L6 8l-2.78 1.39.53-3.1L1.5 4.1l3.15-.37z"/></svg>
+                  <svg class="star-svg" viewBox="0 0 12 12" fill="#c8a24a"><path d="M6 1l1.35 2.73L10.5 4.1l-2.25 2.19.53 3.1L6 8l-2.78 1.39.53-3.1L1.5 4.1l3.15-.37z"/></svg>
+                  <svg class="star-svg" viewBox="0 0 12 12" fill="#c8a24a"><path d="M6 1l1.35 2.73L10.5 4.1l-2.25 2.19.53 3.1L6 8l-2.78 1.39.53-3.1L1.5 4.1l3.15-.37z"/></svg>
+                </div>
+              </div>
+              <p class="product-card__price">Rs. 3,800</p>
+              <button class="btn btn--cream btn--full">Add to Cart</button>
+            </div>
+          </article>
+
+          <article class="product-card" role="listitem">
+            <div class="product-card__image-wrap">
+              <a href="product.html">
+                <img src="https://www.figma.com/api/mcp/asset/70351293-49f2-4b12-9ee5-7118a4985c67" alt="Cardamom Fudge" loading="lazy" />
+              </a>
+            </div>
+            <div class="product-card__body">
+              <div>
+                <h3 class="product-card__name"><a href="product.html">Cardamom Fudge</a></h3>
+                <div class="stars" aria-label="4 stars">
+                  <svg class="star-svg" viewBox="0 0 12 12" fill="#c8a24a"><path d="M6 1l1.35 2.73L10.5 4.1l-2.25 2.19.53 3.1L6 8l-2.78 1.39.53-3.1L1.5 4.1l3.15-.37z"/></svg>
+                  <svg class="star-svg" viewBox="0 0 12 12" fill="#c8a24a"><path d="M6 1l1.35 2.73L10.5 4.1l-2.25 2.19.53 3.1L6 8l-2.78 1.39.53-3.1L1.5 4.1l3.15-.37z"/></svg>
+                  <svg class="star-svg" viewBox="0 0 12 12" fill="#c8a24a"><path d="M6 1l1.35 2.73L10.5 4.1l-2.25 2.19.53 3.1L6 8l-2.78 1.39.53-3.1L1.5 4.1l3.15-.37z"/></svg>
+                  <svg class="star-svg" viewBox="0 0 12 12" fill="#c8a24a"><path d="M6 1l1.35 2.73L10.5 4.1l-2.25 2.19.53 3.1L6 8l-2.78 1.39.53-3.1L1.5 4.1l3.15-.37z"/></svg>
+                  <svg class="star-svg" viewBox="0 0 12 12" fill="#e8d5b0"><path d="M6 1l1.35 2.73L10.5 4.1l-2.25 2.19.53 3.1L6 8l-2.78 1.39.53-3.1L1.5 4.1l3.15-.37z"/></svg>
+                </div>
+              </div>
+              <p class="product-card__price">Rs. 2,900</p>
+              <button class="btn btn--cream btn--full">Add to Cart</button>
+            </div>
+          </article>
+
+          <article class="product-card" role="listitem">
+            <div class="product-card__image-wrap">
+              <a href="product.html">
+                <img src="https://www.figma.com/api/mcp/asset/93326169-86e2-409a-a431-b9bb23e9f435" alt="Saffron Milk Cake" loading="lazy" />
+              </a>
+              <span class="product-card__badge badge">New</span>
+            </div>
+            <div class="product-card__body">
+              <div>
+                <h3 class="product-card__name"><a href="product.html">Saffron Milk Cake</a></h3>
+                <div class="stars" aria-label="5 stars">
+                  <svg class="star-svg" viewBox="0 0 12 12" fill="#c8a24a"><path d="M6 1l1.35 2.73L10.5 4.1l-2.25 2.19.53 3.1L6 8l-2.78 1.39.53-3.1L1.5 4.1l3.15-.37z"/></svg>
+                  <svg class="star-svg" viewBox="0 0 12 12" fill="#c8a24a"><path d="M6 1l1.35 2.73L10.5 4.1l-2.25 2.19.53 3.1L6 8l-2.78 1.39.53-3.1L1.5 4.1l3.15-.37z"/></svg>
+                  <svg class="star-svg" viewBox="0 0 12 12" fill="#c8a24a"><path d="M6 1l1.35 2.73L10.5 4.1l-2.25 2.19.53 3.1L6 8l-2.78 1.39.53-3.1L1.5 4.1l3.15-.37z"/></svg>
+                  <svg class="star-svg" viewBox="0 0 12 12" fill="#c8a24a"><path d="M6 1l1.35 2.73L10.5 4.1l-2.25 2.19.53 3.1L6 8l-2.78 1.39.53-3.1L1.5 4.1l3.15-.37z"/></svg>
+                  <svg class="star-svg" viewBox="0 0 12 12" fill="#c8a24a"><path d="M6 1l1.35 2.73L10.5 4.1l-2.25 2.19.53 3.1L6 8l-2.78 1.39.53-3.1L1.5 4.1l3.15-.37z"/></svg>
+                </div>
+              </div>
+              <p class="product-card__price">Rs. 3,200</p>
+              <button class="btn btn--cream btn--full">Add to Cart</button>
+            </div>
+          </article>
+
+        </div><!-- /product-grid-3 -->
+
+        <!-- Pagination -->
+        <nav class="pagination" aria-label="Pagination">
+          <button class="pagination__btn pagination__btn--active" aria-current="page" aria-label="Page 1">1</button>
+          <button class="pagination__btn" aria-label="Page 2">2</button>
+          <button class="pagination__btn" aria-label="Page 3">3</button>
+          <button class="pagination__btn" aria-label="More pages">&hellip;</button>
+        </nav>
+
+      </div><!-- /listing-main -->
+
+    </section>
+
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="site-footer">
+    <div class="site-footer__grid">
+      <div>
+        <p class="site-footer__brand-name">AZMEER BAKERY</p>
+        <p class="site-footer__tagline">Crafting the finest South Asian fusion delights. Every bite is a story of heritage and love, delivered fresh to your doorstep.</p>
+        <div class="footer-socials">
+          <a href="#" class="footer-socials__btn" aria-label="Instagram">
+            <svg viewBox="0 0 20 20" fill="none" stroke="white" stroke-width="1.8" width="20" height="20"><rect x="2" y="2" width="16" height="16" rx="5" ry="5"/><circle cx="10" cy="10" r="3.5"/><circle cx="14.5" cy="5.5" r="1" fill="white" stroke="none"/></svg>
+          </a>
+          <a href="#" class="footer-socials__btn" aria-label="Facebook">
+            <svg viewBox="0 0 20 20" fill="white" width="20" height="20"><path d="M15 2h-2.5A4.5 4.5 0 0 0 8 6.5V9H5v3h3v6h3v-6h3l.5-3H11V6.5A1.5 1.5 0 0 1 12.5 5H15z"/></svg>
+          </a>
+          <a href="#" class="footer-socials__btn" aria-label="Twitter">
+            <svg viewBox="0 0 20 20" fill="white" width="20" height="20"><path d="M17.3 4.2 12 9.6 17.6 16h-3.4l-4-5.4-4.6 5.4H2.4l5.6-6.6L2.4 4.2h3.4l3.7 5 4.4-5h3.4z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div>
+        <h3 class="footer-col__heading">Quick Links</h3>
+        <ul class="footer-links">
+          <li><a href="#" class="footer-links__item">Our Story</a></li>
+          <li><a href="listing.html" class="footer-links__item">Shop All</a></li>
+          <li><a href="listing.html" class="footer-links__item">Cakes</a></li>
+          <li><a href="#" class="footer-links__item">Ramadan Specials</a></li>
+          <li><a href="#" class="footer-links__item">Track Order</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="footer-col__heading">Contact Info</h3>
+        <div class="flex flex-col gap-12">
+          <div class="footer-contact-row">
+            <svg viewBox="0 0 16 16" fill="none" stroke="#fff6e5" stroke-width="1.5" width="16" height="16"><path d="M8 1.3a5 5 0 0 0-5 5c0 3.75 5 9.4 5 9.4s5-5.65 5-9.4a5 5 0 0 0-5-5z"/><circle cx="8" cy="6.3" r="2"/></svg>
+            <span>45 Main Blvd, Gulberg III, Lahore</span>
+          </div>
+          <div class="footer-contact-row">
+            <svg viewBox="0 0 16 16" fill="none" stroke="#fff6e5" stroke-width="1.5" width="16" height="16"><path d="M13.3 10.7l-2-1.7a1 1 0 0 0-1.3.1l-.8.8a8.5 8.5 0 0 1-3.1-3.1l.8-.8a1 1 0 0 0 .1-1.3L5.3 2.7A1 1 0 0 0 4 2.5L2.8 3.7A2 2 0 0 0 2.4 6C3.6 9.8 6.2 12.4 10 13.6a2 2 0 0 0 2.3-.4l1.2-1.2a1 1 0 0 0-.2-1.3z"/></svg>
+            <span>+92 42 3571 8899</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-divider"></div>
+    <p class="footer-copy">&copy; 2024 Azmeer Bakery. All rights reserved. Designed with Love.</p>
+  </footer>
+
+  <!-- WhatsApp FAB -->
+  <a href="https://wa.me/923001234567" class="whatsapp-fab" aria-label="Chat on WhatsApp" target="_blank" rel="noopener">
+    <svg viewBox="0 0 32 32" fill="white" width="32" height="32">
+      <path d="M16 3C9 3 3 9 3 16c0 2.3.6 4.5 1.7 6.4L3 29l6.8-1.7C11.5 28.4 13.7 29 16 29c7 0 13-6 13-13S23 3 16 3zm6.6 18.6c-.3.8-1.5 1.5-2.1 1.6-.6.1-1.2.1-4.1-1.2-3.4-1.5-5.6-5-5.8-5.2-.2-.2-1.5-2-.9-3.7.5-1.7 1.8-1.9 2.3-1.9h.7c.3 0 .6.2.8.7l1 2.5c.2.4.1.8-.1 1.1l-.6.8c-.2.2-.2.5 0 .7.8 1.2 1.8 2 3.1 2.7.3.2.6.1.8-.1l.7-.9c.2-.3.6-.4.9-.3l2.4 1.2c.5.2.7.5.7.9l.2 1z"/>
+    </svg>
+  </a>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

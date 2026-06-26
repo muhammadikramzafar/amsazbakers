@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Azmeer Bakery — Crafted with Love, Delivered Fresh</title>
+  <meta name="description" content="Azmeer Bakery – South Asian fusion delights. Order cakes, sweets, pizza, snacks and more. Same-day delivery in Lahore." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&family=DM+Sans:wght@400;600;700;800&family=Inter:wght@800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- ===== HEADER ===== -->
+  <header class="site-header">
+    <nav class="site-header__nav">
+      <a href="index.html" class="site-header__logo">AZMEER BAKERY</a>
+
+      <div class="search-bar" role="search">
+        <svg class="search-bar__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
+        </svg>
+        <input class="search-bar__input" type="search" placeholder="Search for cakes, sweets, pastries..." aria-label="Search products" />
+      </div>
+
+      <div class="header-controls">
+        <div class="lang-switcher" aria-label="Language selector">
+          <span class="lang-switcher__active">EN</span>
+          <div class="lang-switcher__divider" aria-hidden="true"></div>
+          <span class="lang-switcher__inactive">URDU</span>
+        </div>
+        <div class="header-icons">
+          <button class="header-icon-btn" aria-label="Account">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" width="24" height="24">
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/>
+            </svg>
+          </button>
+          <div class="cart-wrapper">
+            <button class="header-icon-btn" aria-label="Shopping bag">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" width="24" height="24">
+                <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/>
+              </svg>
+            </button>
+            <span class="cart-badge" aria-label="3 items in cart">3</span>
+          </div>
+        </div>
+      </div>
+
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobile-nav">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+
+    <div class="delivery-strip" role="marquee" aria-live="off">
+      Free delivery on orders above Rs. 999 &mdash; Same-day delivery available
+    </div>
+  </header>
+
+  <!-- Mobile nav -->
+  <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile navigation">
+    <div class="search-bar mobile-nav__search" role="search">
+      <svg class="search-bar__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+        <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
+      </svg>
+      <input class="search-bar__input" type="search" placeholder="Search..." aria-label="Search products" />
+    </div>
+    <div class="mobile-nav__links">
+      <a href="index.html" class="mobile-nav__link">Home</a>
+      <a href="listing.html" class="mobile-nav__link">Shop All</a>
+      <a href="product.html" class="mobile-nav__link">Cakes</a>
+      <a href="#" class="mobile-nav__link">Deals</a>
+    </div>
+  </nav>
+
+  <div class="header-spacer"></div>
+
+  <main>
+
+    <!-- ===== HERO ===== -->
+    <section class="hero" aria-label="Hero banner">
+      <div class="hero__bg" aria-hidden="true">
+        <img
+          src="https://www.figma.com/api/mcp/asset/dc93c2e1-cf6b-4bcf-8437-e8b0283c5384"
+          alt=""
+          loading="eager"
+        />
+        <div class="hero__overlay"></div>
+      </div>
+      <div class="hero__content">
+        <h1 class="hero__title">Crafted with Love, Delivered Fresh</h1>
+        <p class="hero__subtitle">Bringing the authentic taste of tradition fused with modern craftsmanship to your celebrations.</p>
+        <div class="hero__actions">
+          <a href="listing.html" class="btn btn--primary hero__btn--primary">Shop Now</a>
+          <a href="listing.html" class="btn btn--outline hero__btn--outline">View Menu</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== EXPLORE OUR KITCHEN ===== -->
+    <section class="category-section" aria-label="Product categories">
+      <div class="section-header">
+        <h2 class="section-heading">Explore Our Kitchen</h2>
+        <span class="gold-rule gold-rule--center" aria-hidden="true"></span>
+      </div>
+
+      <div class="category-grid">
+        <!-- Row 1 -->
+        <div class="category-row">
+          <article class="category-card" tabindex="0" role="link" aria-label="Sweets">
+            <img src="https://www.figma.com/api/mcp/asset/72692a42-0193-42bf-82d5-c6f97e77fa94" alt="Sweets" loading="lazy" />
+            <div class="category-card__overlay" aria-hidden="true"></div>
+            <div class="category-card__label">Sweets</div>
+          </article>
+          <article class="category-card" tabindex="0" role="link" aria-label="Pizza">
+            <img src="https://www.figma.com/api/mcp/asset/0808d911-f369-4806-b719-8651b99b1792" alt="Pizza" loading="lazy" />
+            <div class="category-card__overlay" aria-hidden="true"></div>
+            <div class="category-card__label">Pizza</div>
+          </article>
+          <article class="category-card" tabindex="0" role="link" aria-label="Snacks">
+            <img src="https://www.figma.com/api/mcp/asset/9658cbc9-6a88-4d32-8a38-7419e2be443f" alt="Snacks" loading="lazy" />
+            <div class="category-card__overlay" aria-hidden="true"></div>
+            <div class="category-card__label">Snacks</div>
+          </article>
+          <article class="category-card" tabindex="0" role="link" aria-label="Dairy">
+            <img src="https://www.figma.com/api/mcp/asset/98179ed7-27ee-4d46-9944-19bb82ad1b03" alt="Dairy" loading="lazy" />
+            <div class="category-card__overlay" aria-hidden="true"></div>
+            <div class="category-card__label">Dairy</div>
+          </article>
+          <article class="category-card" tabindex="0" role="link" aria-label="Coffee and Tea">
+            <img src="https://www.figma.com/api/mcp/asset/05f371f3-5fff-4cf4-814d-91d88f0cfb5f" alt="Coffee and Tea" loading="lazy" />
+            <div class="category-card__overlay" aria-hidden="true"></div>
+            <div class="category-card__label">Coffee &amp; Tea</div>
+          </article>
+          <article class="category-card" tabindex="0" role="link" aria-label="Juices">
+            <img src="https://www.figma.com/api/mcp/asset/bac69832-8117-4765-ad2c-1ec025bb26bd" alt="Juices" loading="lazy" />
+            <div class="category-card__overlay" aria-hidden="true"></div>
+            <div class="category-card__label">Juices</div>
+          </article>
+        </div>
+
+        <!-- Row 2 -->
+        <div class="category-row">
+          <article class="category-card" tabindex="0" role="link" aria-label="Shakes">
+            <img src="https://www.figma.com/api/mcp/asset/561e05c4-6760-4fbf-b2dd-ee26ee5a6b14" alt="Shakes" loading="lazy" />
+            <div class="category-card__overlay" aria-hidden="true"></div>
+            <div class="category-card__label">Shakes</div>
+          </article>
+          <article class="category-card" tabindex="0" role="link" aria-label="Ice Cream and Dessert">
+            <img src="https://www.figma.com/api/mcp/asset/a9e63ff3-bcdf-4edd-a46e-fc587bb83a9a" alt="Ice Cream and Dessert" loading="lazy" />
+            <div class="category-card__overlay" aria-hidden="true"></div>
+            <div class="category-card__label">Ice Cream &amp; Dessert</div>
+          </article>
+          <article class="category-card" tabindex="0" role="link" aria-label="Salad and Chaat">
+            <img src="https://www.figma.com/api/mcp/asset/d5d01ffe-6cae-4cf6-96b1-92501a1f6d48" alt="Salad and Chaat" loading="lazy" />
+            <div class="category-card__overlay" aria-hidden="true"></div>
+            <div class="category-card__label">Salad &amp; Chaat</div>
+          </article>
+          <article class="category-card" tabindex="0" role="link" aria-label="Fried Items">
+            <img src="https://www.figma.com/api/mcp/asset/44e4a882-d11b-4102-be23-97d5182bd62f" alt="Fried Items" loading="lazy" />
+            <div class="category-card__overlay" aria-hidden="true"></div>
+            <div class="category-card__label">Fried Items</div>
+          </article>
+          <article class="category-card" tabindex="0" role="link" aria-label="Fast Food">
+            <img src="https://www.figma.com/api/mcp/asset/b2d05727-da33-4397-af07-4bfef0054671" alt="Fast Food" loading="lazy" />
+            <div class="category-card__overlay" aria-hidden="true"></div>
+            <div class="category-card__label">Fast Food</div>
+          </article>
+          <article class="category-card" tabindex="0" role="link" aria-label="Deals">
+            <img src="https://www.figma.com/api/mcp/asset/cfe26807-13a3-488b-9a9a-2d3c6277ffdf" alt="Deals" loading="lazy" />
+            <div class="category-card__overlay" aria-hidden="true"></div>
+            <div class="category-card__label">Deals</div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== BESTSELLERS ===== -->
+    <section class="bestsellers-section" aria-label="Bestselling products">
+      <div class="section-header section-header--left">
+        <h2 class="section-heading" style="text-align:left;">Bestsellers</h2>
+        <p class="section-subheading" style="text-align:left;">Our most loved creations</p>
+        <span class="gold-rule" aria-hidden="true"></span>
+      </div>
+
+      <div class="product-grid-4">
+        <!-- Card 1 -->
+        <article class="product-card">
+          <div class="product-card__image-wrap">
+            <img src="https://www.figma.com/api/mcp/asset/c9f80cbd-116f-43ce-8e70-246a3c4d39da" alt="Gulab Jamun Cheesecake" loading="lazy" />
+            <span class="product-card__badge badge">Bestseller</span>
+          </div>
+          <div class="product-card__body">
+            <div>
+              <h3 class="product-card__name">Gulab Jamun Cheesecake</h3>
+              <div class="stars" aria-label="5 stars">
+                <svg class="star-svg" viewBox="0 0 12 12" fill="#c8a24a"><path d="M6 1l1.35 2.73L10.5 4.1l-2.25 2.19.53 3.1L6 8l-2.78 1.39.53-3.1L1.5 4.1l3.15-.37z"/></svg>
+                <svg class="star-svg" viewBox="0 0 12 12" fill="#c8a24a"><path d="M6 1l1.35 2.73L10.5 4.1l-2.25 2.19.53 3.1L6 8l-2.78 1.39.53-3.1L1.5 4.1l3.15-.37z"/></svg>
+                <svg class="star-svg" viewBox="0 0 12 12" fill="#c8a24a"><path d="M6 1l1.35 2.73L10.5 4.1l-2.25 2.19.53 3.1L6 8l-2.78 1.39.53-3.1L1.5 4.1l3.15-.37z"/></svg>
+                <svg class="star-svg" viewBox="0 0 12 12" fill="#c8a24a"><path d="M6 1l1.35 2.73L10.5 4.1l-2.25 2.19.53 3.1L6 8l-2.78 1.39.53-3.1L1.5 4.1l3.15-.37z"/></svg>
+                <svg class="star-svg" viewBox="0 0 12 12" fill="#c8a24a"><path d="M6 1l1.35 2.73L10.5 4.1l-2.25 2.19.53 3.1L6 8l-2.78 1.39.53-3.1L1.5 4.1l3.15-.37z"/></svg>
+              </div>
+            </div>
+            <p class="product-card__price">Rs. 2,450</p>
+            <button class="btn btn--cream btn--full">Add to Cart</button>
+          </div>
+        </article>
+
+        <!-- Card 2 -->
+        <article class="product-card">
+          <div class="product-card__image-wrap">
+            <img src="https://www.figma.com/api/mcp/asset/e7b0ac94-50cc-4976-b1ab-3ebbaf417b8f" alt="Saffron Cardamom Cake" loading="lazy" />
+          </div>
+          <div class="product-card__body">
+            <div>
+              <h3 class="product-card__name">Saffron Cardamom Cake</h3>
+              <div class="stars" aria-label="4 stars">
+                <svg class="star-svg" viewBox="0 0 12 12" fill="#c8a24a"><path d="M6 1l1.35 2.73L10.5 4.1l-2.25 2.19.53 3.1L6 8l-2.78 1.39.53-3.1L1.5 4.1l3.15-.37z"/></svg>
+                <svg class="star-svg" viewBox="0 0 12 12" fill="#c8a24a"><path d="M6 1l1.35 2.73L10.5 4.1l-2.25 2.19.53 3.1L6 8l-2.78 1.39.53-3.1L1.5 4.1l3.15-.37z"/></svg>
+                <svg class="star-svg" viewBox="0 0 12 12" fill="#c8a24a"><path d="M6 1l1.35 2.73L10.5 4.1l-2.25 2.19.53 3.1L6 8l-2.78 1.39.53-3.1L1.5 4.1l3.15-.37z"/></svg>
+                <svg class="star-svg" viewBox="0 0 12 12" fill="#c8a24a"><path d="M6 1l1.35 2.73L10.5 4.1l-2.25 2.19.53 3.1L6 8l-2.78 1.39.53-3.1L1.5 4.1l3.15-.37z"/></svg>
+                <svg class="star-svg" viewBox="0 0 12 12" fill="#e8d5b0"><path d="M6 1l1.35 2.73L10.5 4.1l-2.25 2.19.53 3.1L6 8l-2.78 1.39.53-3.1L1.5 4.1l3.15-.37z"/></svg>
+              </div>
+            </div>
+            <p class="product-card__price">Rs. 3,200</p>
+            <button class="btn btn--cream btn--full">Add to Cart</button>
+          </div>
+        </article>
+
+        <!-- Card 3 -->
+        <article class="product-card">
+          <div class="product-card__image-wrap">
+            <img src="https://www.figma.com/api/mcp/asset/a65e349a-01cb-4054-97da-8df553c0d121" alt="Pistachio Rose Pastry" loading="lazy" />
+            <span class="product-card__badge badge">New</span>
+          </div>
+          <div class="product-card__body">
+            <div>
+              <h3 class="product-card__name">Pistachio Rose Pastry</h3>
+              <div class="stars" aria-label="5 stars">
+                <svg class="star-svg" viewBox="0 0 12 12" fill="#c8a24a"><path d="M6 1l1.35 2.73L10.5 4.1l-2.25 2.19.53 3.1L6 8l-2.78 1.39.53-3.1L1.5 4.1l3.15-.37z"/></svg>
+                <svg class="star-svg" viewBox="0 0 12 12" fill="#c8a24a"><path d="M6 1l1.35 2.73L10.5 4.1l-2.25 2.19.53 3.1L6 8l-2.78 1.39.53-3.1L1.5 4.1l3.15-.37z"/></svg>
+                <svg class="star-svg" viewBox="0 0 12 12" fill="#c8a24a"><path d="M6 1l1.35 2.73L10.5 4.1l-2.25 2.19.53 3.1L6 8l-2.78 1.39.53-3.1L1.5 4.1l3.15-.37z"/></svg>
+                <svg class="star-svg" viewBox="0 0 12 12" fill="#c8a24a"><path d="M6 1l1.35 2.73L10.5 4.1l-2.25 2.19.53 3.1L6 8l-2.78 1.39.53-3.1L1.5 4.1l3.15-.37z"/></svg>
+                <svg class="star-svg" viewBox="0 0 12 12" fill="#c8a24a"><path d="M6 1l1.35 2.73L10.5 4.1l-2.25 2.19.53 3.1L6 8l-2.78 1.39.53-3.1L1.5 4.1l3.15-.37z"/></svg>
+              </div>
+            </div>
+            <p class="product-card__price">Rs. 450</p>
+            <button class="btn btn--cream btn--full">Add to Cart</button>
+          </div>
+        </article>
+
+        <!-- Card 4 -->
+        <article class="product-card">
+          <div class="product-card__image-wrap">
+            <img src="https://www.figma.com/api/mcp/asset/0ed43f66-f01c-4bf4-b56e-c3c301f6d2f7" alt="Nutella Fudge Cake" loading="lazy" />
+          </div>
+          <div class="product-card__body">
+            <div>
+              <h3 class="product-card__name">Nutella Fudge Cake</h3>
+              <div class="stars" aria-label="4 stars">
+                <svg class="star-svg" viewBox="0 0 12 12" fill="#c8a24a"><path d="M6 1l1.35 2.73L10.5 4.1l-2.25 2.19.53 3.1L6 8l-2.78 1.39.53-3.1L1.5 4.1l3.15-.37z"/></svg>
+                <svg class="star-svg" viewBox="0 0 12 12" fill="#c8a24a"><path d="M6 1l1.35 2.73L10.5 4.1l-2.25 2.19.53 3.1L6 8l-2.78 1.39.53-3.1L1.5 4.1l3.15-.37z"/></svg>
+                <svg class="star-svg" viewBox="0 0 12 12" fill="#c8a24a"><path d="M6 1l1.35 2.73L10.5 4.1l-2.25 2.19.53 3.1L6 8l-2.78 1.39.53-3.1L1.5 4.1l3.15-.37z"/></svg>
+                <svg class="star-svg" viewBox="0 0 12 12" fill="#c8a24a"><path d="M6 1l1.35 2.73L10.5 4.1l-2.25 2.19.53 3.1L6 8l-2.78 1.39.53-3.1L1.5 4.1l3.15-.37z"/></svg>
+                <svg class="star-svg" viewBox="0 0 12 12" fill="#e8d5b0"><path d="M6 1l1.35 2.73L10.5 4.1l-2.25 2.19.53 3.1L6 8l-2.78 1.39.53-3.1L1.5 4.1l3.15-.37z"/></svg>
+              </div>
+            </div>
+            <p class="product-card__price">Rs. 2,800</p>
+            <button class="btn btn--cream btn--full">Add to Cart</button>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ===== FRESH FROM THE OVEN ===== -->
+    <section class="fresh-section" aria-label="Fresh from the oven specials">
+      <div class="section-header">
+        <h2 class="section-heading">Fresh From The Oven</h2>
+        <p class="section-subheading">Today's special spotlights</p>
+        <span class="gold-rule gold-rule--center" aria-hidden="true"></span>
+      </div>
+
+      <div class="fresh-grid">
+        <article class="fresh-card">
+          <div class="fresh-card__image">
+            <img src="https://www.figma.com/api/mcp/asset/304f152c-f5f4-4bab-9b12-cf6d7d47371d" alt="Margherita Pizza" loading="lazy" />
+          </div>
+          <div class="fresh-card__body">
+            <span class="badge badge--fresh">Fresh From Oven</span>
+            <h3 class="fresh-card__name">Margherita Pizza</h3>
+            <p class="fresh-card__desc">San Marzano tomato sauce, mozzarella, and fresh basil.</p>
+            <p class="fresh-card__price">Rs. 1,250</p>
+            <button class="btn btn--cream btn--full">Add to Cart</button>
+          </div>
+        </article>
+
+        <article class="fresh-card">
+          <div class="fresh-card__image">
+            <img src="https://www.figma.com/api/mcp/asset/574efa0e-5bf5-4017-bc6e-25f45c3db695" alt="Pepperoni Pizza" loading="lazy" />
+          </div>
+          <div class="fresh-card__body">
+            <span class="badge badge--fresh">Fresh From Oven</span>
+            <h3 class="fresh-card__name">Pepperoni Pizza</h3>
+            <p class="fresh-card__desc">Spicy pepperoni, mozzarella, and a hint of oregano.</p>
+            <p class="fresh-card__price">Rs. 1,350</p>
+            <button class="btn btn--cream btn--full">Add to Cart</button>
+          </div>
+        </article>
+
+        <article class="fresh-card">
+          <div class="fresh-card__image">
+            <img src="https://www.figma.com/api/mcp/asset/dbf734cd-833f-4566-89c7-b24912fbd006" alt="BBQ Chicken Pizza" loading="lazy" />
+          </div>
+          <div class="fresh-card__body">
+            <span class="badge badge--fresh">Fresh From Oven</span>
+            <h3 class="fresh-card__name">BBQ Chicken Pizza</h3>
+            <p class="fresh-card__desc">Grilled chicken, BBQ sauce, red onion, and cilantro.</p>
+            <p class="fresh-card__price">Rs. 1,450</p>
+            <button class="btn btn--cream btn--full">Add to Cart</button>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ===== MORE FROM OUR KITCHEN ===== -->
+    <section class="more-section" aria-label="More from our kitchen">
+      <div class="section-header">
+        <h2 class="section-heading">More From Our Kitchen</h2>
+        <p class="section-subheading">Freshly baked favorites to pair with your pizzas</p>
+        <span class="gold-rule gold-rule--center" aria-hidden="true"></span>
+      </div>
+
+      <div class="product-grid-4-rows">
+        <div class="flex gap-24">
+          <article class="special-card">
+            <div class="special-card__image"><img src="https://www.figma.com/api/mcp/asset/022a81bd-650b-4d7e-92b1-9e2172e3b824" alt="Garlic Bread" loading="lazy" /></div>
+            <div class="special-card__body">
+              <h3 class="special-card__name">Garlic Bread</h3>
+              <p class="special-card__desc">Soft, buttery, and aromatic.</p>
+              <p class="special-card__price">Rs. 450</p>
+              <button class="btn btn--cream btn--full">Add to Cart</button>
+            </div>
+          </article>
+          <article class="special-card">
+            <div class="special-card__image"><img src="https://www.figma.com/api/mcp/asset/adecdc8f-4e6f-4282-a100-76d5535c462b" alt="Calzone" loading="lazy" /></div>
+            <div class="special-card__body">
+              <h3 class="special-card__name">Calzone</h3>
+              <p class="special-card__desc">Folded mozzarella and tomato sauce.</p>
+              <p class="special-card__price">Rs. 550</p>
+              <button class="btn btn--cream btn--full">Add to Cart</button>
+            </div>
+          </article>
+          <article class="special-card">
+            <div class="special-card__image"><img src="https://www.figma.com/api/mcp/asset/fafd4215-f8c8-4a03-9471-3eb38a895336" alt="Focaccia" loading="lazy" /></div>
+            <div class="special-card__body">
+              <h3 class="special-card__name">Focaccia</h3>
+              <p class="special-card__desc">Rosemary, sea salt, and olive oil.</p>
+              <p class="special-card__price">Rs. 480</p>
+              <button class="btn btn--cream btn--full">Add to Cart</button>
+            </div>
+          </article>
+          <article class="special-card">
+            <div class="special-card__image"><img src="https://www.figma.com/api/mcp/asset/b9ee739a-6517-4374-a847-8eb877fcd1f9" alt="Croissant" loading="lazy" /></div>
+            <div class="special-card__body">
+              <h3 class="special-card__name">Croissant</h3>
+              <p class="special-card__desc">Flaky, buttery layers.</p>
+              <p class="special-card__price">Rs. 320</p>
+              <button class="btn btn--cream btn--full">Add to Cart</button>
+            </div>
+          </article>
+        </div>
+        <div class="flex gap-24">
+          <article class="special-card">
+            <div class="special-card__image"><img src="https://www.figma.com/api/mcp/asset/e6d1e561-c91c-4269-8fd4-824eee9efe70" alt="Cinnamon Rolls" loading="lazy" /></div>
+            <div class="special-card__body">
+              <h3 class="special-card__name">Cinnamon Rolls</h3>
+              <p class="special-card__desc">Soft dough with sweet cinnamon glaze.</p>
+              <p class="special-card__price">Rs. 380</p>
+              <button class="btn btn--cream btn--full">Add to Cart</button>
+            </div>
+          </article>
+          <article class="special-card">
+            <div class="special-card__image"><img src="https://www.figma.com/api/mcp/asset/858cb2e5-1a4e-40d0-bc32-8768cb868e83" alt="Chocolate Chip Cookies" loading="lazy" /></div>
+            <div class="special-card__body">
+              <h3 class="special-card__name">Chocolate Chip Cookies</h3>
+              <p class="special-card__desc">Warm, chewy, and full of dark chocolate.</p>
+              <p class="special-card__price">Rs. 420</p>
+              <button class="btn btn--cream btn--full">Add to Cart</button>
+            </div>
+          </article>
+          <article class="special-card">
+            <div class="special-card__image"><img src="https://www.figma.com/api/mcp/asset/6fbf9839-16c2-48be-8bac-d9b900bbda4c" alt="Monkey Bread" loading="lazy" /></div>
+            <div class="special-card__body">
+              <h3 class="special-card__name">Monkey Bread</h3>
+              <p class="special-card__desc">Pull-apart dough with caramelized sugar.</p>
+              <p class="special-card__price">Rs. 520</p>
+              <button class="btn btn--cream btn--full">Add to Cart</button>
+            </div>
+          </article>
+          <article class="special-card">
+            <div class="special-card__image"><img src="https://www.figma.com/api/mcp/asset/5da72c8b-dfd3-4cb4-a019-70007747e500" alt="Stuffed Breadsticks" loading="lazy" /></div>
+            <div class="special-card__body">
+              <h3 class="special-card__name">Stuffed Breadsticks</h3>
+              <p class="special-card__desc">Mozzarella and herbs inside a crispy crust.</p>
+              <p class="special-card__price">Rs. 480</p>
+              <button class="btn btn--cream btn--full">Add to Cart</button>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== PROMO BANNER ===== -->
+    <section class="promo-banner" aria-label="Ramadan Collection promotion">
+      <div class="promo-banner__inner">
+        <div class="promo-banner__text">
+          <p class="promo-banner__title">The Ramadan Collection is Here</p>
+          <p class="promo-banner__subtitle">Order for Iftar by 3:00 PM for same-day delivery.</p>
+        </div>
+        <a href="listing.html" class="btn btn--primary">View Collection</a>
+      </div>
+    </section>
+
+    <!-- ===== TESTIMONIALS ===== -->
+    <section class="testimonials-section" aria-label="Customer reviews">
+      <div class="section-header">
+        <h2 class="section-heading">A Slice of Happiness</h2>
+        <span class="gold-rule gold-rule--center" aria-hidden="true"></span>
+      </div>
+
+      <div class="testimonials-grid">
+        <article class="testimonial-card">
+          <div class="stars stars--lg" aria-label="5 stars">
+            <svg class="star-svg star-svg--lg" viewBox="0 0 16 16" fill="#c8a24a"><path d="M8 1l1.8 3.64L14 5.45l-3 2.92.71 4.14L8 10.5l-3.71 1.95.71-4.14L2 5.45l4.2-.81z"/></svg>
+            <svg class="star-svg star-svg--lg" viewBox="0 0 16 16" fill="#c8a24a"><path d="M8 1l1.8 3.64L14 5.45l-3 2.92.71 4.14L8 10.5l-3.71 1.95.71-4.14L2 5.45l4.2-.81z"/></svg>
+            <svg class="star-svg star-svg--lg" viewBox="0 0 16 16" fill="#c8a24a"><path d="M8 1l1.8 3.64L14 5.45l-3 2.92.71 4.14L8 10.5l-3.71 1.95.71-4.14L2 5.45l4.2-.81z"/></svg>
+            <svg class="star-svg star-svg--lg" viewBox="0 0 16 16" fill="#c8a24a"><path d="M8 1l1.8 3.64L14 5.45l-3 2.92.71 4.14L8 10.5l-3.71 1.95.71-4.14L2 5.45l4.2-.81z"/></svg>
+            <svg class="star-svg star-svg--lg" viewBox="0 0 16 16" fill="#c8a24a"><path d="M8 1l1.8 3.64L14 5.45l-3 2.92.71 4.14L8 10.5l-3.71 1.95.71-4.14L2 5.45l4.2-.81z"/></svg>
+          </div>
+          <p class="testimonial-card__quote">"The Gulab Jamun Cheesecake was the star of our dinner party. Absolutely sublime and unique!"</p>
+          <div class="testimonial-card__author">
+            <div class="testimonial-card__avatar"></div>
+            <span class="testimonial-card__name">Sarah Mansoor</span>
+          </div>
+        </article>
+
+        <article class="testimonial-card">
+          <div class="stars stars--lg" aria-label="5 stars">
+            <svg class="star-svg star-svg--lg" viewBox="0 0 16 16" fill="#c8a24a"><path d="M8 1l1.8 3.64L14 5.45l-3 2.92.71 4.14L8 10.5l-3.71 1.95.71-4.14L2 5.45l4.2-.81z"/></svg>
+            <svg class="star-svg star-svg--lg" viewBox="0 0 16 16" fill="#c8a24a"><path d="M8 1l1.8 3.64L14 5.45l-3 2.92.71 4.14L8 10.5l-3.71 1.95.71-4.14L2 5.45l4.2-.81z"/></svg>
+            <svg class="star-svg star-svg--lg" viewBox="0 0 16 16" fill="#c8a24a"><path d="M8 1l1.8 3.64L14 5.45l-3 2.92.71 4.14L8 10.5l-3.71 1.95.71-4.14L2 5.45l4.2-.81z"/></svg>
+            <svg class="star-svg star-svg--lg" viewBox="0 0 16 16" fill="#c8a24a"><path d="M8 1l1.8 3.64L14 5.45l-3 2.92.71 4.14L8 10.5l-3.71 1.95.71-4.14L2 5.45l4.2-.81z"/></svg>
+            <svg class="star-svg star-svg--lg" viewBox="0 0 16 16" fill="#c8a24a"><path d="M8 1l1.8 3.64L14 5.45l-3 2.92.71 4.14L8 10.5l-3.71 1.95.71-4.14L2 5.45l4.2-.81z"/></svg>
+          </div>
+          <p class="testimonial-card__quote">"Every cake is a masterpiece. Ordered for my wedding anniversary and everyone was blown away by the flavors!"</p>
+          <div class="testimonial-card__author">
+            <div class="testimonial-card__avatar"></div>
+            <span class="testimonial-card__name">Ahmed Raza</span>
+          </div>
+        </article>
+
+        <article class="testimonial-card">
+          <div class="stars stars--lg" aria-label="5 stars">
+            <svg class="star-svg star-svg--lg" viewBox="0 0 16 16" fill="#c8a24a"><path d="M8 1l1.8 3.64L14 5.45l-3 2.92.71 4.14L8 10.5l-3.71 1.95.71-4.14L2 5.45l4.2-.81z"/></svg>
+            <svg class="star-svg star-svg--lg" viewBox="0 0 16 16" fill="#c8a24a"><path d="M8 1l1.8 3.64L14 5.45l-3 2.92.71 4.14L8 10.5l-3.71 1.95.71-4.14L2 5.45l4.2-.81z"/></svg>
+            <svg class="star-svg star-svg--lg" viewBox="0 0 16 16" fill="#c8a24a"><path d="M8 1l1.8 3.64L14 5.45l-3 2.92.71 4.14L8 10.5l-3.71 1.95.71-4.14L2 5.45l4.2-.81z"/></svg>
+            <svg class="star-svg star-svg--lg" viewBox="0 0 16 16" fill="#c8a24a"><path d="M8 1l1.8 3.64L14 5.45l-3 2.92.71 4.14L8 10.5l-3.71 1.95.71-4.14L2 5.45l4.2-.81z"/></svg>
+            <svg class="star-svg star-svg--lg" viewBox="0 0 16 16" fill="#c8a24a"><path d="M8 1l1.8 3.64L14 5.45l-3 2.92.71 4.14L8 10.5l-3.71 1.95.71-4.14L2 5.45l4.2-.81z"/></svg>
+          </div>
+          <p class="testimonial-card__quote">"Fast delivery and the packaging was gorgeous. The Pistachio Rose Pastry is now my weekly indulgence!"</p>
+          <div class="testimonial-card__author">
+            <div class="testimonial-card__avatar"></div>
+            <span class="testimonial-card__name">Nadia Khan</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ===== INSTAGRAM ===== -->
+    <section class="instagram-section" aria-label="Instagram feed">
+      <div class="instagram-header">
+        <h2 class="instagram-header__title">Follow our Story @AzmeerBakery</h2>
+        <a href="#" class="instagram-header__link">View on Instagram</a>
+      </div>
+      <div class="instagram-grid">
+        <div class="instagram-grid__item"><img src="https://www.figma.com/api/mcp/asset/73e530fa-5b7b-4d3b-aafd-7c383fcc5b27" alt="Instagram post 1" loading="lazy" /></div>
+        <div class="instagram-grid__item"><img src="https://www.figma.com/api/mcp/asset/d2c4d17f-ed4a-4e2f-8fb1-54a59f39cd93" alt="Instagram post 2" loading="lazy" /></div>
+        <div class="instagram-grid__item"><img src="https://www.figma.com/api/mcp/asset/55aac246-4e61-449b-98ec-060a0234a0f2" alt="Instagram post 3" loading="lazy" /></div>
+        <div class="instagram-grid__item"><img src="https://www.figma.com/api/mcp/asset/ae525b9c-287b-4e0f-ada9-1277625f8bad" alt="Instagram post 4" loading="lazy" /></div>
+        <div class="instagram-grid__item"><img src="https://www.figma.com/api/mcp/asset/156e916b-6b17-42f6-a043-db8b95638ebb" alt="Instagram post 5" loading="lazy" /></div>
+        <div class="instagram-grid__item"><img src="https://www.figma.com/api/mcp/asset/b0e76c2a-d64f-4f01-bec3-2cb38ad7517b" alt="Instagram post 6" loading="lazy" /></div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="site-footer">
+    <div class="site-footer__grid">
+      <div>
+        <p class="site-footer__brand-name">AZMEER BAKERY</p>
+        <p class="site-footer__tagline">Crafting the finest South Asian fusion delights. Every bite is a story of heritage and love, delivered fresh to your doorstep.</p>
+        <div class="footer-socials">
+          <a href="#" class="footer-socials__btn" aria-label="Instagram">
+            <svg viewBox="0 0 20 20" fill="white" width="20" height="20"><rect x="2" y="2" width="16" height="16" rx="5" ry="5" fill="none" stroke="white" stroke-width="1.8"/><circle cx="10" cy="10" r="3.5" fill="none" stroke="white" stroke-width="1.8"/><circle cx="14.5" cy="5.5" r="1" fill="white"/></svg>
+          </a>
+          <a href="#" class="footer-socials__btn" aria-label="Facebook">
+            <svg viewBox="0 0 20 20" fill="white" width="20" height="20"><path d="M15 2h-2.5A4.5 4.5 0 0 0 8 6.5V9H5v3h3v6h3v-6h3l.5-3H11V6.5A1.5 1.5 0 0 1 12.5 5H15z" stroke="none"/></svg>
+          </a>
+          <a href="#" class="footer-socials__btn" aria-label="Twitter / X">
+            <svg viewBox="0 0 20 20" fill="white" width="20" height="20"><path d="M17.3 4.2 12 9.6 17.6 16h-3.4l-4-5.4-4.6 5.4H2.4l5.6-6.6L2.4 4.2h3.4l3.7 5 4.4-5h3.4z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div>
+        <h3 class="footer-col__heading">Quick Links</h3>
+        <ul class="footer-links">
+          <li><a href="#" class="footer-links__item">Our Story</a></li>
+          <li><a href="listing.html" class="footer-links__item">Shop All</a></li>
+          <li><a href="listing.html" class="footer-links__item">Cakes</a></li>
+          <li><a href="#" class="footer-links__item">Ramadan Specials</a></li>
+          <li><a href="#" class="footer-links__item">Track Order</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="footer-col__heading">Contact Info</h3>
+        <div class="flex flex-col gap-12">
+          <div class="footer-contact-row">
+            <svg viewBox="0 0 16 16" fill="none" stroke="#fff6e5" stroke-width="1.5" width="16" height="16"><path d="M8 1.3a5 5 0 0 0-5 5c0 3.75 5 9.4 5 9.4s5-5.65 5-9.4a5 5 0 0 0-5-5z"/><circle cx="8" cy="6.3" r="2"/></svg>
+            <span>45 Main Blvd, Gulberg III, Lahore</span>
+          </div>
+          <div class="footer-contact-row">
+            <svg viewBox="0 0 16 16" fill="none" stroke="#fff6e5" stroke-width="1.5" width="16" height="16"><path d="M13.3 10.7l-2-1.7a1 1 0 0 0-1.3.1l-.8.8a8.5 8.5 0 0 1-3.1-3.1l.8-.8a1 1 0 0 0 .1-1.3L5.3 2.7A1 1 0 0 0 4 2.5L2.8 3.7A2 2 0 0 0 2.4 6C3.6 9.8 6.2 12.4 10 13.6a2 2 0 0 0 2.3-.4l1.2-1.2a1 1 0 0 0-.2-1.3z"/></svg>
+            <span>+92 42 3571 8899</span>
+          </div>
+          <div class="footer-contact-row">
+            <svg viewBox="0 0 16 16" fill="none" stroke="#fff6e5" stroke-width="1.5" width="16" height="16"><path d="M12.5 3h-9A1.5 1.5 0 0 0 2 4.5v7A1.5 1.5 0 0 0 3.5 13h9a1.5 1.5 0 0 0 1.5-1.5v-7A1.5 1.5 0 0 0 12.5 3z"/><polyline points="2,4.5 8,9 14,4.5"/></svg>
+            <span>hello@azmeerbakery.pk</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-divider"></div>
+    <p class="footer-copy">&copy; 2024 Azmeer Bakery. All rights reserved. Designed with Love.</p>
+  </footer>
+
+  <!-- WhatsApp FAB -->
+  <a href="https://wa.me/923001234567" class="whatsapp-fab" aria-label="Chat on WhatsApp" target="_blank" rel="noopener">
+    <svg viewBox="0 0 32 32" fill="white" width="32" height="32">
+      <path d="M16 3C9 3 3 9 3 16c0 2.3.6 4.5 1.7 6.4L3 29l6.8-1.7C11.5 28.4 13.7 29 16 29c7 0 13-6 13-13S23 3 16 3zm6.6 18.6c-.3.8-1.5 1.5-2.1 1.6-.6.1-1.2.1-4.1-1.2-3.4-1.5-5.6-5-5.8-5.2-.2-.2-1.5-2-.9-3.7.5-1.7 1.8-1.9 2.3-1.9h.7c.3 0 .6.2.8.7l1 2.5c.2.4.1.8-.1 1.1l-.6.8c-.2.2-.2.5 0 .7.8 1.2 1.8 2 3.1 2.7.3.2.6.1.8-.1l.7-.9c.2-.3.6-.4.9-.3l2.4 1.2c.5.2.7.5.7.9l.2 1z"/>
+    </svg>
+  </a>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

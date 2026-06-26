@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Royal Belgian Truffle Cake — Azmeer Bakery</title>
+  <meta name="description" content="Rich Belgian dark chocolate layers with a signature cardamom truffle ganache. Order online for same-day delivery in Lahore." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&family=DM+Sans:wght@400;600;700;800&family=Inter:wght@800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- ===== HEADER ===== -->
+  <header class="site-header">
+    <nav class="site-header__nav">
+      <a href="index.html" class="site-header__logo">AZMEER BAKERY</a>
+
+      <div class="search-bar" role="search">
+        <svg class="search-bar__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
+        </svg>
+        <input class="search-bar__input" type="search" placeholder="Search for cakes, sweets, pastries..." aria-label="Search products" />
+      </div>
+
+      <div class="header-controls">
+        <div class="lang-switcher">
+          <span class="lang-switcher__active">EN</span>
+          <div class="lang-switcher__divider"></div>
+          <span class="lang-switcher__inactive">URDU</span>
+        </div>
+        <div class="header-icons">
+          <button class="header-icon-btn" aria-label="Account">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" width="24" height="24">
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/>
+            </svg>
+          </button>
+          <div class="cart-wrapper">
+            <button class="header-icon-btn" aria-label="Shopping bag">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" width="24" height="24">
+                <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/>
+              </svg>
+            </button>
+            <span class="cart-badge" aria-label="3 items in cart">3</span>
+          </div>
+        </div>
+      </div>
+
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobile-nav">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+    <div class="delivery-strip">
+      Free delivery on orders above Rs. 999 &mdash; Same-day delivery available
+    </div>
+  </header>
+
+  <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile navigation">
+    <div class="search-bar mobile-nav__search" role="search">
+      <svg class="search-bar__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
+      </svg>
+      <input class="search-bar__input" type="search" placeholder="Search..." aria-label="Search products" />
+    </div>
+    <div class="mobile-nav__links">
+      <a href="index.html" class="mobile-nav__link">Home</a>
+      <a href="listing.html" class="mobile-nav__link">Shop All</a>
+      <a href="product.html" class="mobile-nav__link">Cakes</a>
+      <a href="#" class="mobile-nav__link">Deals</a>
+    </div>
+  </nav>
+
+  <div class="header-spacer"></div>
+
+  <main>
+
+    <!-- ===== PRODUCT DETAIL ===== -->
+    <section class="detail-section" aria-label="Product details">
+
+      <!-- Left: Image Gallery -->
+      <div class="product-gallery">
+        <div class="product-gallery__main" id="mainImageWrap">
+          <img
+            src="https://www.figma.com/api/mcp/asset/57dac078-6cc0-4b6a-8efb-ac6d0858a764"
+            alt="Royal Belgian Truffle Cake – main view"
+            id="mainImage"
+            loading="eager"
+          />
+        </div>
+        <div class="product-gallery__thumbs" role="list" aria-label="Product thumbnails">
+          <button
+            class="product-gallery__thumb is-active"
+            data-src="https://www.figma.com/api/mcp/asset/57dac078-6cc0-4b6a-8efb-ac6d0858a764"
+            aria-label="View image 1"
+            role="listitem"
+          >
+            <img src="https://www.figma.com/api/mcp/asset/57dac078-6cc0-4b6a-8efb-ac6d0858a764" alt="Thumbnail 1" loading="lazy" />
+          </button>
+          <button
+            class="product-gallery__thumb"
+            data-src="https://www.figma.com/api/mcp/asset/9765b931-a006-4b77-bb52-ff94eec27bf0"
+            aria-label="View image 2"
+            role="listitem"
+          >
+            <img src="https://www.figma.com/api/mcp/asset/9765b931-a006-4b77-bb52-ff94eec27bf0" alt="Thumbnail 2" loading="lazy" />
+          </button>
+          <button
+            class="product-gallery__thumb"
+            data-src="https://www.figma.com/api/mcp/asset/cfe3c0ce-0d2d-436a-8bd5-330fa0c5b2b2"
+            aria-label="View image 3"
+            role="listitem"
+          >
+            <img src="https://www.figma.com/api/mcp/asset/cfe3c0ce-0d2d-436a-8bd5-330fa0c5b2b2" alt="Thumbnail 3" loading="lazy" />
+          </button>
+          <button
+            class="product-gallery__thumb"
+            data-src="https://www.figma.com/api/mcp/asset/dc352543-96b2-454c-b195-c52ab4907cb1"
+            aria-label="View image 4"
+            role="listitem"
+          >
+            <img src="https://www.figma.com/api/mcp/asset/dc352543-96b2-454c-b195-c52ab4907cb1" alt="Thumbnail 4" loading="lazy" />
+          </button>
+        </div>
+      </div>
+
+      <!-- Right: Product Info -->
+      <div class="product-info">
+
+        <p class="product-info__breadcrumb">
+          <a href="listing.html">Cakes</a> / Birthday Cakes
+        </p>
+
+        <div>
+          <h1 class="product-info__title">Royal Belgian Truffle Cake</h1>
+          <p class="product-info__desc">Rich Belgian dark chocolate layers with a signature cardamom truffle ganache.</p>
+        </div>
+
+        <div class="product-info__rating">
+          <div class="stars stars--lg" aria-label="5 stars">
+            <svg class="star-svg star-svg--lg" viewBox="0 0 16 16" fill="#c8a24a"><path d="M8 1l1.8 3.64L14 5.45l-3 2.92.71 4.14L8 10.5l-3.71 1.95.71-4.14L2 5.45l4.2-.81z"/></svg>
+            <svg class="star-svg star-svg--lg" viewBox="0 0 16 16" fill="#c8a24a"><path d="M8 1l1.8 3.64L14 5.45l-3 2.92.71 4.14L8 10.5l-3.71 1.95.71-4.14L2 5.45l4.2-.81z"/></svg>
+            <svg class="star-svg star-svg--lg" viewBox="0 0 16 16" fill="#c8a24a"><path d="M8 1l1.8 3.64L14 5.45l-3 2.92.71 4.14L8 10.5l-3.71 1.95.71-4.14L2 5.45l4.2-.81z"/></svg>
+            <svg class="star-svg star-svg--lg" viewBox="0 0 16 16" fill="#c8a24a"><path d="M8 1l1.8 3.64L14 5.45l-3 2.92.71 4.14L8 10.5l-3.71 1.95.71-4.14L2 5.45l4.2-.81z"/></svg>
+            <svg class="star-svg star-svg--lg" viewBox="0 0 16 16" fill="#c8a24a"><path d="M8 1l1.8 3.64L14 5.45l-3 2.92.71 4.14L8 10.5l-3.71 1.95.71-4.14L2 5.45l4.2-.81z"/></svg>
+          </div>
+          <span class="product-info__review-count">(124 Customer Reviews)</span>
+        </div>
+
+        <p class="product-info__price" id="productPrice">Rs. 3,450</p>
+
+        <!-- Size Selector -->
+        <div class="size-selector">
+          <p class="size-selector__label">Select Size / Weight</p>
+          <div class="size-options" role="group" aria-label="Weight options">
+            <button class="size-option" data-price="2450" aria-pressed="false">1 lbs</button>
+            <button class="size-option is-selected" data-price="3450" aria-pressed="true">2 lbs</button>
+            <button class="size-option" data-price="4800" aria-pressed="false">3 lbs</button>
+            <button class="size-option" data-price="6500" aria-pressed="false">5 lbs</button>
+          </div>
+        </div>
+
+        <!-- Qty + Add to Cart -->
+        <div class="add-to-cart-row">
+          <div class="qty-picker" aria-label="Quantity selector">
+            <button class="qty-picker__btn" id="qtyMinus" aria-label="Decrease quantity">
+              <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16">
+                <line x1="3" y1="8" x2="13" y2="8"/>
+              </svg>
+            </button>
+            <span class="qty-picker__value" id="qtyValue" aria-live="polite">1</span>
+            <button class="qty-picker__btn" id="qtyPlus" aria-label="Increase quantity">
+              <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16">
+                <line x1="8" y1="3" x2="8" y2="13"/><line x1="3" y1="8" x2="13" y2="8"/>
+              </svg>
+            </button>
+          </div>
+          <button class="btn btn--primary add-to-cart-btn" id="addToCartBtn">Add to Cart</button>
+        </div>
+
+        <!-- Wishlist -->
+        <button class="btn btn--outline btn--full" id="wishlistBtn">Add to Wishlist</button>
+
+        <!-- Delivery Info -->
+        <div class="delivery-info-box">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#5a3e2b" stroke-width="1.8" width="24" height="24">
+            <rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/>
+          </svg>
+          <p>Order before 3:00 PM for <strong>Same-day Delivery</strong> in Lahore.</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ===== PRODUCT TABS ===== -->
+    <section class="product-tabs-section" aria-label="Product information tabs">
+
+      <div class="tabs-nav" role="tablist" aria-label="Product details">
+        <button class="tab-btn is-active" role="tab" aria-selected="true" aria-controls="tab-description" id="btn-description">Description</button>
+        <button class="tab-btn" role="tab" aria-selected="false" aria-controls="tab-ingredients" id="btn-ingredients">Ingredients</button>
+        <button class="tab-btn" role="tab" aria-selected="false" aria-controls="tab-delivery" id="btn-delivery">Delivery Info</button>
+        <button class="tab-btn" role="tab" aria-selected="false" aria-controls="tab-reviews" id="btn-reviews">Reviews</button>
+      </div>
+
+      <!-- Description Tab -->
+      <div class="tab-panel is-active" id="tab-description" role="tabpanel" aria-labelledby="btn-description">
+        <p class="product-description">
+          Our Royal Belgian Truffle Cake is a chocolate lover's dream reimagined with a South Asian twist. Each layer is infused with freshly ground green cardamom, which perfectly balances the bitterness of the 70% dark Belgian cocoa.
+        </p>
+        <ul class="feature-list">
+          <li class="feature-item">
+            <svg viewBox="0 0 16 16" fill="none" stroke="#c8a24a" stroke-width="2" width="16" height="16"><path d="M14 4L6 12l-4-4"/></svg>
+            Premium Belgian Chocolate
+          </li>
+          <li class="feature-item">
+            <svg viewBox="0 0 16 16" fill="none" stroke="#c8a24a" stroke-width="2" width="16" height="16"><path d="M14 4L6 12l-4-4"/></svg>
+            Cardamom Infused Sponge
+          </li>
+          <li class="feature-item">
+            <svg viewBox="0 0 16 16" fill="none" stroke="#c8a24a" stroke-width="2" width="16" height="16"><path d="M14 4L6 12l-4-4"/></svg>
+            Gold Leaf Garnish
+          </li>
+          <li class="feature-item">
+            <svg viewBox="0 0 16 16" fill="none" stroke="#c8a24a" stroke-width="2" width="16" height="16"><path d="M14 4L6 12l-4-4"/></svg>
+            Eggless Options Available
+          </li>
+        </ul>
+      </div>
+
+      <!-- Ingredients Tab -->
+      <div class="tab-panel" id="tab-ingredients" role="tabpanel" aria-labelledby="btn-ingredients">
+        <p class="product-description">
+          Our Belgian Truffle Cake is made from the finest, freshest ingredients sourced locally and internationally.
+        </p>
+        <ul class="feature-list">
+          <li class="feature-item">
+            <svg viewBox="0 0 16 16" fill="none" stroke="#c8a24a" stroke-width="2" width="16" height="16"><path d="M14 4L6 12l-4-4"/></svg>
+            70% Dark Belgian Cocoa
+          </li>
+          <li class="feature-item">
+            <svg viewBox="0 0 16 16" fill="none" stroke="#c8a24a" stroke-width="2" width="16" height="16"><path d="M14 4L6 12l-4-4"/></svg>
+            Freshly Ground Green Cardamom
+          </li>
+          <li class="feature-item">
+            <svg viewBox="0 0 16 16" fill="none" stroke="#c8a24a" stroke-width="2" width="16" height="16"><path d="M14 4L6 12l-4-4"/></svg>
+            Unsalted Butter &amp; Cream
+          </li>
+          <li class="feature-item">
+            <svg viewBox="0 0 16 16" fill="none" stroke="#c8a24a" stroke-width="2" width="16" height="16"><path d="M14 4L6 12l-4-4"/></svg>
+            Organic Eggs (or egg substitute on request)
+          </li>
+          <li class="feature-item">
+            <svg viewBox="0 0 16 16" fill="none" stroke="#c8a24a" stroke-width="2" width="16" height="16"><path d="M14 4L6 12l-4-4"/></svg>
+            24-Karat Edible Gold Leaf
+          </li>
+        </ul>
+        <p style="margin-top:16px; font-size:13px; color:var(--clr-brown-60);">
+          <em>May contain traces of nuts. Please inform us of any allergies when placing your order.</em>
+        </p>
+      </div>
+
+      <!-- Delivery Info Tab -->
+      <div class="tab-panel" id="tab-delivery" role="tabpanel" aria-labelledby="btn-delivery">
+        <p class="product-description">
+          We deliver across Lahore and surrounding areas. Here is everything you need to know about our delivery service:
+        </p>
+        <ul class="feature-list">
+          <li class="feature-item">
+            <svg viewBox="0 0 16 16" fill="none" stroke="#c8a24a" stroke-width="2" width="16" height="16"><path d="M14 4L6 12l-4-4"/></svg>
+            Same-day delivery for orders placed before 3:00 PM
+          </li>
+          <li class="feature-item">
+            <svg viewBox="0 0 16 16" fill="none" stroke="#c8a24a" stroke-width="2" width="16" height="16"><path d="M14 4L6 12l-4-4"/></svg>
+            Free delivery on orders above Rs. 999
+          </li>
+          <li class="feature-item">
+            <svg viewBox="0 0 16 16" fill="none" stroke="#c8a24a" stroke-width="2" width="16" height="16"><path d="M14 4L6 12l-4-4"/></svg>
+            Delivery charge Rs. 150 for orders below Rs. 999
+          </li>
+          <li class="feature-item">
+            <svg viewBox="0 0 16 16" fill="none" stroke="#c8a24a" stroke-width="2" width="16" height="16"><path d="M14 4L6 12l-4-4"/></svg>
+            Available time slots: 10 AM – 1 PM, 2 PM – 5 PM, 6 PM – 9 PM
+          </li>
+          <li class="feature-item">
+            <svg viewBox="0 0 16 16" fill="none" stroke="#c8a24a" stroke-width="2" width="16" height="16"><path d="M14 4L6 12l-4-4"/></svg>
+            Cakes are delivered in temperature-controlled packaging
+          </li>
+        </ul>
+      </div>
+
+      <!-- Reviews Tab -->
+      <div class="tab-panel" id="tab-reviews" role="tabpanel" aria-labelledby="btn-reviews">
+        <div class="testimonials-grid" style="margin-bottom:32px;">
+          <article class="testimonial-card">
+            <div class="stars stars--lg" aria-label="5 stars">
+              <svg class="star-svg star-svg--lg" viewBox="0 0 16 16" fill="#c8a24a"><path d="M8 1l1.8 3.64L14 5.45l-3 2.92.71 4.14L8 10.5l-3.71 1.95.71-4.14L2 5.45l4.2-.81z"/></svg>
+              <svg class="star-svg star-svg--lg" viewBox="0 0 16 16" fill="#c8a24a"><path d="M8 1l1.8 3.64L14 5.45l-3 2.92.71 4.14L8 10.5l-3.71 1.95.71-4.14L2 5.45l4.2-.81z"/></svg>
+              <svg class="star-svg star-svg--lg" viewBox="0 0 16 16" fill="#c8a24a"><path d="M8 1l1.8 3.64L14 5.45l-3 2.92.71 4.14L8 10.5l-3.71 1.95.71-4.14L2 5.45l4.2-.81z"/></svg>
+              <svg class="star-svg star-svg--lg" viewBox="0 0 16 16" fill="#c8a24a"><path d="M8 1l1.8 3.64L14 5.45l-3 2.92.71 4.14L8 10.5l-3.71 1.95.71-4.14L2 5.45l4.2-.81z"/></svg>
+              <svg class="star-svg star-svg--lg" viewBox="0 0 16 16" fill="#c8a24a"><path d="M8 1l1.8 3.64L14 5.45l-3 2.92.71 4.14L8 10.5l-3.71 1.95.71-4.14L2 5.45l4.2-.81z"/></svg>
+            </div>
+            <p class="testimonial-card__quote">"The Gulab Jamun Cheesecake was the star of our dinner party. Absolutely sublime and unique!"</p>
+            <div class="testimonial-card__author">
+              <div class="testimonial-card__avatar"></div>
+              <span class="testimonial-card__name">Sarah Mansoor</span>
+            </div>
+          </article>
+          <article class="testimonial-card">
+            <div class="stars stars--lg" aria-label="5 stars">
+              <svg class="star-svg star-svg--lg" viewBox="0 0 16 16" fill="#c8a24a"><path d="M8 1l1.8 3.64L14 5.45l-3 2.92.71 4.14L8 10.5l-3.71 1.95.71-4.14L2 5.45l4.2-.81z"/></svg>
+              <svg class="star-svg star-svg--lg" viewBox="0 0 16 16" fill="#c8a24a"><path d="M8 1l1.8 3.64L14 5.45l-3 2.92.71 4.14L8 10.5l-3.71 1.95.71-4.14L2 5.45l4.2-.81z"/></svg>
+              <svg class="star-svg star-svg--lg" viewBox="0 0 16 16" fill="#c8a24a"><path d="M8 1l1.8 3.64L14 5.45l-3 2.92.71 4.14L8 10.5l-3.71 1.95.71-4.14L2 5.45l4.2-.81z"/></svg>
+              <svg class="star-svg star-svg--lg" viewBox="0 0 16 16" fill="#c8a24a"><path d="M8 1l1.8 3.64L14 5.45l-3 2.92.71 4.14L8 10.5l-3.71 1.95.71-4.14L2 5.45l4.2-.81z"/></svg>
+              <svg class="star-svg star-svg--lg" viewBox="0 0 16 16" fill="#c8a24a"><path d="M8 1l1.8 3.64L14 5.45l-3 2.92.71 4.14L8 10.5l-3.71 1.95.71-4.14L2 5.45l4.2-.81z"/></svg>
+            </div>
+            <p class="testimonial-card__quote">"Best birthday cake I have ever ordered. The cardamom truffle ganache is just divine!"</p>
+            <div class="testimonial-card__author">
+              <div class="testimonial-card__avatar"></div>
+              <span class="testimonial-card__name">Hamza Qureshi</span>
+            </div>
+          </article>
+          <article class="testimonial-card">
+            <div class="stars stars--lg" aria-label="5 stars">
+              <svg class="star-svg star-svg--lg" viewBox="0 0 16 16" fill="#c8a24a"><path d="M8 1l1.8 3.64L14 5.45l-3 2.92.71 4.14L8 10.5l-3.71 1.95.71-4.14L2 5.45l4.2-.81z"/></svg>
+              <svg class="star-svg star-svg--lg" viewBox="0 0 16 16" fill="#c8a24a"><path d="M8 1l1.8 3.64L14 5.45l-3 2.92.71 4.14L8 10.5l-3.71 1.95.71-4.14L2 5.45l4.2-.81z"/></svg>
+              <svg class="star-svg star-svg--lg" viewBox="0 0 16 16" fill="#c8a24a"><path d="M8 1l1.8 3.64L14 5.45l-3 2.92.71 4.14L8 10.5l-3.71 1.95.71-4.14L2 5.45l4.2-.81z"/></svg>
+              <svg class="star-svg star-svg--lg" viewBox="0 0 16 16" fill="#c8a24a"><path d="M8 1l1.8 3.64L14 5.45l-3 2.92.71 4.14L8 10.5l-3.71 1.95.71-4.14L2 5.45l4.2-.81z"/></svg>
+              <svg class="star-svg star-svg--lg" viewBox="0 0 16 16" fill="#e8d5b0"><path d="M8 1l1.8 3.64L14 5.45l-3 2.92.71 4.14L8 10.5l-3.71 1.95.71-4.14L2 5.45l4.2-.81z"/></svg>
+            </div>
+            <p class="testimonial-card__quote">"Packaging was stunning and the cake tasted even better than it looked. Will order again!"</p>
+            <div class="testimonial-card__author">
+              <div class="testimonial-card__avatar"></div>
+              <span class="testimonial-card__name">Zara Ahmed</span>
+            </div>
+          </article>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ===== RELATED PRODUCTS ===== -->
+    <section class="bestsellers-section" aria-label="You may also like">
+      <div class="section-header section-header--left">
+        <h2 class="section-heading" style="text-align:left;">You May Also Like</h2>
+        <span class="gold-rule" aria-hidden="true"></span>
+      </div>
+      <div class="product-grid-4">
+        <article class="product-card">
+          <div class="product-card__image-wrap">
+            <a href="product.html"><img src="https://www.figma.com/api/mcp/asset/da5a2dbc-b7de-4523-af8c-87ebdd8d7d9b" alt="Saffron Cardamom Cake" loading="lazy" /></a>
+            <span class="product-card__badge badge">Bestseller</span>
+          </div>
+          <div class="product-card__body">
+            <div>
+              <h3 class="product-card__name"><a href="product.html">Saffron Cardamom Cake</a></h3>
+              <div class="stars" aria-label="5 stars">
+                <svg class="star-svg" viewBox="0 0 12 12" fill="#c8a24a"><path d="M6 1l1.35 2.73L10.5 4.1l-2.25 2.19.53 3.1L6 8l-2.78 1.39.53-3.1L1.5 4.1l3.15-.37z"/></svg>
+                <svg class="star-svg" viewBox="0 0 12 12" fill="#c8a24a"><path d="M6 1l1.35 2.73L10.5 4.1l-2.25 2.19.53 3.1L6 8l-2.78 1.39.53-3.1L1.5 4.1l3.15-.37z"/></svg>
+                <svg class="star-svg" viewBox="0 0 12 12" fill="#c8a24a"><path d="M6 1l1.35 2.73L10.5 4.1l-2.25 2.19.53 3.1L6 8l-2.78 1.39.53-3.1L1.5 4.1l3.15-.37z"/></svg>
+                <svg class="star-svg" viewBox="0 0 12 12" fill="#c8a24a"><path d="M6 1l1.35 2.73L10.5 4.1l-2.25 2.19.53 3.1L6 8l-2.78 1.39.53-3.1L1.5 4.1l3.15-.37z"/></svg>
+                <svg class="star-svg" viewBox="0 0 12 12" fill="#c8a24a"><path d="M6 1l1.35 2.73L10.5 4.1l-2.25 2.19.53 3.1L6 8l-2.78 1.39.53-3.1L1.5 4.1l3.15-.37z"/></svg>
+              </div>
+            </div>
+            <p class="product-card__price">Rs. 3,200</p>
+            <button class="btn btn--cream btn--full">Add to Cart</button>
+          </div>
+        </article>
+        <article class="product-card">
+          <div class="product-card__image-wrap">
+            <a href="product.html"><img src="https://www.figma.com/api/mcp/asset/cb14d45f-cc70-40cc-a429-f50116ed2fda" alt="Pistachio Rose Cake" loading="lazy" /></a>
+          </div>
+          <div class="product-card__body">
+            <div>
+              <h3 class="product-card__name"><a href="product.html">Pistachio Rose Cake</a></h3>
+              <div class="stars" aria-label="4 stars">
+                <svg class="star-svg" viewBox="0 0 12 12" fill="#c8a24a"><path d="M6 1l1.35 2.73L10.5 4.1l-2.25 2.19.53 3.1L6 8l-2.78 1.39.53-3.1L1.5 4.1l3.15-.37z"/></svg>
+                <svg class="star-svg" viewBox="0 0 12 12" fill="#c8a24a"><path d="M6 1l1.35 2.73L10.5 4.1l-2.25 2.19.53 3.1L6 8l-2.78 1.39.53-3.1L1.5 4.1l3.15-.37z"/></svg>
+                <svg class="star-svg" viewBox="0 0 12 12" fill="#c8a24a"><path d="M6 1l1.35 2.73L10.5 4.1l-2.25 2.19.53 3.1L6 8l-2.78 1.39.53-3.1L1.5 4.1l3.15-.37z"/></svg>
+                <svg class="star-svg" viewBox="0 0 12 12" fill="#c8a24a"><path d="M6 1l1.35 2.73L10.5 4.1l-2.25 2.19.53 3.1L6 8l-2.78 1.39.53-3.1L1.5 4.1l3.15-.37z"/></svg>
+                <svg class="star-svg" viewBox="0 0 12 12" fill="#e8d5b0"><path d="M6 1l1.35 2.73L10.5 4.1l-2.25 2.19.53 3.1L6 8l-2.78 1.39.53-3.1L1.5 4.1l3.15-.37z"/></svg>
+              </div>
+            </div>
+            <p class="product-card__price">Rs. 3,800</p>
+            <button class="btn btn--cream btn--full">Add to Cart</button>
+          </div>
+        </article>
+        <article class="product-card">
+          <div class="product-card__image-wrap">
+            <a href="product.html"><img src="https://www.figma.com/api/mcp/asset/a8cecb80-40a1-4e82-8aa6-b87b4c636374" alt="Gulab Jamun Cheesecake" loading="lazy" /></a>
+            <span class="product-card__badge badge">New</span>
+          </div>
+          <div class="product-card__body">
+            <div>
+              <h3 class="product-card__name"><a href="product.html">Gulab Jamun Cheesecake</a></h3>
+              <div class="stars" aria-label="5 stars">
+                <svg class="star-svg" viewBox="0 0 12 12" fill="#c8a24a"><path d="M6 1l1.35 2.73L10.5 4.1l-2.25 2.19.53 3.1L6 8l-2.78 1.39.53-3.1L1.5 4.1l3.15-.37z"/></svg>
+                <svg class="star-svg" viewBox="0 0 12 12" fill="#c8a24a"><path d="M6 1l1.35 2.73L10.5 4.1l-2.25 2.19.53 3.1L6 8l-2.78 1.39.53-3.1L1.5 4.1l3.15-.37z"/></svg>
+                <svg class="star-svg" viewBox="0 0 12 12" fill="#c8a24a"><path d="M6 1l1.35 2.73L10.5 4.1l-2.25 2.19.53 3.1L6 8l-2.78 1.39.53-3.1L1.5 4.1l3.15-.37z"/></svg>
+                <svg class="star-svg" viewBox="0 0 12 12" fill="#c8a24a"><path d="M6 1l1.35 2.73L10.5 4.1l-2.25 2.19.53 3.1L6 8l-2.78 1.39.53-3.1L1.5 4.1l3.15-.37z"/></svg>
+                <svg class="star-svg" viewBox="0 0 12 12" fill="#c8a24a"><path d="M6 1l1.35 2.73L10.5 4.1l-2.25 2.19.53 3.1L6 8l-2.78 1.39.53-3.1L1.5 4.1l3.15-.37z"/></svg>
+              </div>
+            </div>
+            <p class="product-card__price">Rs. 2,450</p>
+            <button class="btn btn--cream btn--full">Add to Cart</button>
+          </div>
+        </article>
+        <article class="product-card">
+          <div class="product-card__image-wrap">
+            <a href="product.html"><img src="https://www.figma.com/api/mcp/asset/75ddeb8c-2c45-4cd4-9572-2e8ec44fe840" alt="Nutella Fudge Cake" loading="lazy" /></a>
+          </div>
+          <div class="product-card__body">
+            <div>
+              <h3 class="product-card__name"><a href="product.html">Nutella Fudge Cake</a></h3>
+              <div class="stars" aria-label="4 stars">
+                <svg class="star-svg" viewBox="0 0 12 12" fill="#c8a24a"><path d="M6 1l1.35 2.73L10.5 4.1l-2.25 2.19.53 3.1L6 8l-2.78 1.39.53-3.1L1.5 4.1l3.15-.37z"/></svg>
+                <svg class="star-svg" viewBox="0 0 12 12" fill="#c8a24a"><path d="M6 1l1.35 2.73L10.5 4.1l-2.25 2.19.53 3.1L6 8l-2.78 1.39.53-3.1L1.5 4.1l3.15-.37z"/></svg>
+                <svg class="star-svg" viewBox="0 0 12 12" fill="#c8a24a"><path d="M6 1l1.35 2.73L10.5 4.1l-2.25 2.19.53 3.1L6 8l-2.78 1.39.53-3.1L1.5 4.1l3.15-.37z"/></svg>
+                <svg class="star-svg" viewBox="0 0 12 12" fill="#c8a24a"><path d="M6 1l1.35 2.73L10.5 4.1l-2.25 2.19.53 3.1L6 8l-2.78 1.39.53-3.1L1.5 4.1l3.15-.37z"/></svg>
+                <svg class="star-svg" viewBox="0 0 12 12" fill="#e8d5b0"><path d="M6 1l1.35 2.73L10.5 4.1l-2.25 2.19.53 3.1L6 8l-2.78 1.39.53-3.1L1.5 4.1l3.15-.37z"/></svg>
+              </div>
+            </div>
+            <p class="product-card__price">Rs. 2,800</p>
+            <button class="btn btn--cream btn--full">Add to Cart</button>
+          </div>
+        </article>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="site-footer">
+    <div class="site-footer__grid">
+      <div>
+        <p class="site-footer__brand-name">AZMEER BAKERY</p>
+        <p class="site-footer__tagline">Crafting the finest South Asian fusion delights. Every bite is a story of heritage and love, delivered fresh to your doorstep.</p>
+        <div class="footer-socials">
+          <a href="#" class="footer-socials__btn" aria-label="Instagram">
+            <svg viewBox="0 0 20 20" fill="none" stroke="white" stroke-width="1.8" width="20" height="20"><rect x="2" y="2" width="16" height="16" rx="5" ry="5"/><circle cx="10" cy="10" r="3.5"/><circle cx="14.5" cy="5.5" r="1" fill="white" stroke="none"/></svg>
+          </a>
+          <a href="#" class="footer-socials__btn" aria-label="Facebook">
+            <svg viewBox="0 0 20 20" fill="white" width="20" height="20"><path d="M15 2h-2.5A4.5 4.5 0 0 0 8 6.5V9H5v3h3v6h3v-6h3l.5-3H11V6.5A1.5 1.5 0 0 1 12.5 5H15z"/></svg>
+          </a>
+          <a href="#" class="footer-socials__btn" aria-label="Twitter">
+            <svg viewBox="0 0 20 20" fill="white" width="20" height="20"><path d="M17.3 4.2 12 9.6 17.6 16h-3.4l-4-5.4-4.6 5.4H2.4l5.6-6.6L2.4 4.2h3.4l3.7 5 4.4-5h3.4z"/></svg>
+          </a>
+        </div>
+      </div>
+      <div>
+        <h3 class="footer-col__heading">Quick Links</h3>
+        <ul class="footer-links">
+          <li><a href="#" class="footer-links__item">Our Story</a></li>
+          <li><a href="listing.html" class="footer-links__item">Shop All</a></li>
+          <li><a href="listing.html" class="footer-links__item">Cakes</a></li>
+          <li><a href="#" class="footer-links__item">Ramadan Specials</a></li>
+          <li><a href="#" class="footer-links__item">Track Order</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="footer-col__heading">Contact Info</h3>
+        <div class="flex flex-col gap-12">
+          <div class="footer-contact-row">
+            <svg viewBox="0 0 16 16" fill="none" stroke="#fff6e5" stroke-width="1.5" width="16" height="16"><path d="M8 1.3a5 5 0 0 0-5 5c0 3.75 5 9.4 5 9.4s5-5.65 5-9.4a5 5 0 0 0-5-5z"/><circle cx="8" cy="6.3" r="2"/></svg>
+            <span>45 Main Blvd, Gulberg III, Lahore</span>
+          </div>
+          <div class="footer-contact-row">
+            <svg viewBox="0 0 16 16" fill="none" stroke="#fff6e5" stroke-width="1.5" width="16" height="16"><path d="M13.3 10.7l-2-1.7a1 1 0 0 0-1.3.1l-.8.8a8.5 8.5 0 0 1-3.1-3.1l.8-.8a1 1 0 0 0 .1-1.3L5.3 2.7A1 1 0 0 0 4 2.5L2.8 3.7A2 2 0 0 0 2.4 6C3.6 9.8 6.2 12.4 10 13.6a2 2 0 0 0 2.3-.4l1.2-1.2a1 1 0 0 0-.2-1.3z"/></svg>
+            <span>+92 42 3571 8899</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-divider"></div>
+    <p class="footer-copy">&copy; 2024 Azmeer Bakery. All rights reserved. Designed with Love.</p>
+  </footer>
+
+  <!-- WhatsApp FAB -->
+  <a href="https://wa.me/923001234567" class="whatsapp-fab" aria-label="Chat on WhatsApp" target="_blank" rel="noopener">
+    <svg viewBox="0 0 32 32" fill="white" width="32" height="32">
+      <path d="M16 3C9 3 3 9 3 16c0 2.3.6 4.5 1.7 6.4L3 29l6.8-1.7C11.5 28.4 13.7 29 16 29c7 0 13-6 13-13S23 3 16 3zm6.6 18.6c-.3.8-1.5 1.5-2.1 1.6-.6.1-1.2.1-4.1-1.2-3.4-1.5-5.6-5-5.8-5.2-.2-.2-1.5-2-.9-3.7.5-1.7 1.8-1.9 2.3-1.9h.7c.3 0 .6.2.8.7l1 2.5c.2.4.1.8-.1 1.1l-.6.8c-.2.2-.2.5 0 .7.8 1.2 1.8 2 3.1 2.7.3.2.6.1.8-.1l.7-.9c.2-.3.6-.4.9-.3l2.4 1.2c.5.2.7.5.7.9l.2 1z"/>
+    </svg>
+  </a>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

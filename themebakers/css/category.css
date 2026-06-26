@@ -1,0 +1,285 @@
+/* ============================================================
+   AZMEER BAKERY — category.css
+   Additional styles specific to category pages
+   Extends: style.css (must be loaded before this file)
+   ============================================================ */
+
+/* ============================================================
+   CATEGORY HERO BANNER
+   ============================================================ */
+.cat-hero {
+  position: relative;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  padding: 80px clamp(20px, 5.5vw, 80px);
+  overflow: hidden;
+}
+
+.cat-hero__bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.cat-hero__bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.cat-hero__overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.42);
+}
+
+.cat-hero__content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  max-width: 720px;
+}
+
+.cat-hero__breadcrumb {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--clr-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.cat-hero__title {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  line-height: 1;
+  color: #fff;
+  margin-bottom: 0;
+}
+
+.cat-hero__subtitle {
+  font-size: clamp(1rem, 1.5vw, 1.125rem);
+  color: #fff;
+  opacity: 0.9;
+  line-height: 1.5;
+}
+
+/* ============================================================
+   FILTER STRIP (pill tabs)
+   ============================================================ */
+.filter-strip {
+  display: flex;
+  gap: 12px;
+  padding: 40px clamp(20px, 5.5vw, 80px);
+  overflow-x: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  flex-wrap: nowrap;
+}
+
+.filter-strip::-webkit-scrollbar { display: none; }
+
+.filter-pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 12px 24px;
+  border-radius: 22px;
+  font-size: 14px;
+  font-weight: 600;
+  font-family: var(--font-body);
+  cursor: pointer;
+  white-space: nowrap;
+  border: 1px solid var(--clr-gold-20);
+  background: var(--clr-white);
+  color: var(--clr-brown);
+  transition: background var(--transition-fast), color var(--transition-fast), border-color var(--transition-fast);
+  flex-shrink: 0;
+}
+
+.filter-pill:hover {
+  border-color: var(--clr-primary);
+  color: var(--clr-primary);
+}
+
+.filter-pill.is-active {
+  background: var(--clr-primary);
+  border-color: var(--clr-primary);
+  color: var(--clr-white);
+}
+
+/* ============================================================
+   STICKY FILTER BAR (toolbar row)
+   ============================================================ */
+.sticky-filter-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px clamp(20px, 5.5vw, 80px);
+  border-top: 1px solid var(--clr-gold-20);
+  border-bottom: 1px solid var(--clr-gold-20);
+  position: sticky;
+  top: var(--header-h);
+  z-index: 100;
+  background: var(--clr-cream);
+}
+
+.filter-bar__left {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.filter-bar__count {
+  font-size: 14px;
+  color: var(--clr-brown-60);
+  white-space: nowrap;
+}
+
+.active-filters {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.active-filters__label {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--clr-brown);
+  white-space: nowrap;
+}
+
+.active-filter-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 10px;
+  background: rgba(200, 162, 74, 0.2);
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: 600;
+  font-family: var(--font-utility);
+  color: var(--clr-brown);
+  cursor: pointer;
+  transition: background var(--transition-fast);
+}
+
+.active-filter-tag:hover { background: rgba(200, 162, 74, 0.35); }
+
+.filter-bar__right {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.sort-dropdown {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 16px;
+  border: 1px solid var(--clr-gold-20);
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.sort-dropdown select {
+  border: none;
+  background: transparent;
+  font-size: 14px;
+  color: var(--clr-brown);
+  font-family: var(--font-body);
+  cursor: pointer;
+  outline: none;
+}
+
+.view-toggle {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.view-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 4px;
+  border: 1px solid var(--clr-gold-20);
+  background: var(--clr-white);
+  cursor: pointer;
+  transition: background var(--transition-fast);
+}
+
+.view-btn svg { width: 18px; height: 18px; }
+
+.view-btn.is-active {
+  background: var(--clr-brown);
+  border-color: var(--clr-brown);
+}
+
+.view-btn.is-active svg { stroke: #fff; fill: none; }
+
+/* ============================================================
+   PRODUCT GRID SECTION
+   ============================================================ */
+.products-section {
+  padding: 64px clamp(20px, 5.5vw, 80px);
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+
+.products-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+/* List view */
+.products-section.list-view .products-row {
+  grid-template-columns: 1fr;
+}
+
+.products-section.list-view .product-card {
+  flex-direction: row;
+  height: 160px;
+}
+
+.products-section.list-view .product-card__image-wrap {
+  width: 180px;
+  height: 160px;
+  flex-shrink: 0;
+}
+
+.products-section.list-view .product-card__body {
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 24px;
+}
+
+/* ============================================================
+   RESPONSIVE — TABLET
+   ============================================================ */
+@media (max-width: 1024px) {
+  .products-row { grid-template-columns: repeat(3, 1fr); }
+  .cat-hero { height: 320px; padding: 60px clamp(20px, 4vw, 60px); }
+}
+
+@media (max-width: 768px) {
+  .products-row { grid-template-columns: repeat(2, 1fr); gap: 16px; }
+  .filter-strip { padding: 24px 20px; gap: 8px; }
+  .sticky-filter-bar { flex-direction: column; align-items: flex-start; gap: 12px; }
+  .filter-bar__right { width: 100%; justify-content: space-between; }
+  .cat-hero { height: 280px; padding: 40px 20px; }
+  .cat-hero__title { font-size: clamp(1.8rem, 7vw, 2.5rem); }
+}
+
+@media (max-width: 480px) {
+  .products-row { grid-template-columns: 1fr; }
+  .cat-hero { height: auto; min-height: 220px; padding: 40px 20px; }
+}
