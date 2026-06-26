@@ -3,63 +3,82 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Category;
+use App\Services\ImageService;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
 class CategoryController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
+    public function __construct(private ImageService $imageService) {}
+
     public function index()
     {
-        //
+        $categories = Category::withCount('products')->orderBy('sort_order')->paginate(20);
+        return view('admin.categories.index', compact('categories'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
     public function create()
     {
-        //
+        return view('admin.categories.form');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(Request $request)
     {
-        //
+        $validated = $request->validate([
+            'name'        => 'required|string|max:255|unique:categories',
+            'description' => 'nullable|string',
+            'icon'        => 'nullable|string|max:50',
+            'image'       => 'nullable|image|max:2048',
+            'is_active'   => 'boolean',
+            'sort_order'  => 'nullable|integer',
+        ]);
+
+        $validated['slug']      = Str::slug($validated['name']);
+        $validated['is_active'] = $request->boolean('is_active', true);
+
+        if ($request->hasFile('image')) {
+            $validated['image'] = $this->imageService->uploadCategory($request->file('image'));
+        }
+
+        Category::create($validated);
+
+        return redirect()->route('admin.categories.index')->with('success', 'Category created successfully.');
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
+    public function edit(Category $category)
     {
-        //
+        return view('admin.categories.form', compact('category'));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id)
+    public function update(Request $request, Category $category)
     {
-        //
+        $validated = $request->validate([
+            'name'        => 'required|string|max:255|unique:categories,name,'.$category->id,
+            'description' => 'nullable|string',
+            'icon'        => 'nullable|string|max:50',
+            'image'       => 'nullable|image|max:2048',
+            'is_active'   => 'boolean',
+            'sort_order'  => 'nullable|integer',
+        ]);
+
+        $validated['slug']      = Str::slug($validated['name']);
+        $validated['is_active'] = $request->boolean('is_active', true);
+
+        if ($request->hasFile('image')) {
+            $this->imageService->delete($category->image);
+            $validated['image'] = $this->imageService->uploadCategory($request->file('image'));
+        }
+
+        $category->update($validated);
+
+        return redirect()->route('admin.categories.index')->with('success', 'Category updated successfully.');
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, string $id)
+    public function destroy(Category $category)
     {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(string $id)
-    {
-        //
+        $this->imageService->delete($category->image);
+        $category->delete();
+        return redirect()->route('admin.categories.index')->with('success', 'Category deleted.');
     }
 }

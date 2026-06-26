@@ -3,13 +3,14 @@
 namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
+use App\Models\ContactMessage;
 use Illuminate\Http\Request;
 
 class ContactController extends Controller
 {
     public function index()
     {
-        return view('frontend.contact');
+        return view('frontend.contact.index');
     }
 
     public function store(Request $request)
@@ -18,12 +19,12 @@ class ContactController extends Controller
             'name'    => 'required|string|max:255',
             'email'   => 'required|email|max:255',
             'phone'   => 'nullable|string|max:20',
-            'subject' => 'required|string|max:255',
+            'subject' => 'nullable|string|max:255',
             'message' => 'required|string|max:2000',
         ]);
 
-        \App\Models\ContactMessage::create($validated);
+        ContactMessage::create($validated);
 
-        return back()->with('success', 'Thank you! Your message has been sent. We will get back to you soon.');
+        return redirect()->route('contact')->with('success', 'Thank you! Your message has been sent. We will get back to you shortly.');
     }
 }

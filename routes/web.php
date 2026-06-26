@@ -2,7 +2,7 @@
 
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Frontend\HomeController;
-use App\Http\Controllers\Frontend\MenuController;
+use App\Http\Controllers\Frontend\ProductController as FrontendProductController;
 use App\Http\Controllers\Frontend\ContactController;
 use App\Http\Controllers\Frontend\ReservationController;
 use App\Http\Controllers\Admin\DashboardController;
@@ -18,9 +18,20 @@ use Illuminate\Support\Facades\Route;
 |--------------------------------------------------------------------------
 */
 Route::get('/', [HomeController::class, 'index'])->name('home');
-Route::get('/menu', [MenuController::class, 'index'])->name('menu');
+
+// Products / Shop
+Route::get('/products', [FrontendProductController::class, 'index'])->name('products.listing');
+Route::get('/products/{category:slug}', [FrontendProductController::class, 'category'])->name('products.category');
+Route::get('/product/{product:slug}', [FrontendProductController::class, 'show'])->name('products.show');
+
+// Static pages
+Route::get('/about', fn() => view('frontend.pages.about'))->name('pages.about');
+
+// Contact
 Route::get('/contact', [ContactController::class, 'index'])->name('contact');
 Route::post('/contact', [ContactController::class, 'store'])->name('contact.store');
+
+// Reservation
 Route::get('/reservation', [ReservationController::class, 'index'])->name('reservation');
 Route::post('/reservation', [ReservationController::class, 'store'])->name('reservation.store');
 

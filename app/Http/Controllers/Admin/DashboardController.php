@@ -3,22 +3,25 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
+use App\Models\Category;
+use App\Models\ContactMessage;
+use App\Models\Product;
+use App\Models\Reservation;
 
 class DashboardController extends Controller
 {
     public function index()
     {
         $stats = [
-            'products'     => \App\Models\Product::count(),
-            'categories'   => \App\Models\Category::count(),
-            'reservations' => \App\Models\Reservation::count(),
-            'messages'     => \App\Models\ContactMessage::where('is_read', false)->count(),
+            'products'        => Product::count(),
+            'categories'      => Category::count(),
+            'reservations'    => Reservation::count(),
+            'unread_messages' => ContactMessage::where('is_read', false)->count(),
         ];
 
-        $recentReservations = \App\Models\Reservation::latest()->take(5)->get();
-        $recentMessages     = \App\Models\ContactMessage::latest()->take(5)->get();
+        $recentReservations = Reservation::latest()->take(5)->get();
+        $recentMessages     = ContactMessage::latest()->take(5)->get();
 
-        return view('admin.dashboard', compact('stats', 'recentReservations', 'recentMessages'));
+        return view('admin.dashboard.index', compact('stats', 'recentReservations', 'recentMessages'));
     }
 }

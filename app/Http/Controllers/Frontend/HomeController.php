@@ -3,29 +3,27 @@
 namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
+use App\Models\Product;
 
 class HomeController extends Controller
 {
     public function index()
     {
-        $featuredProducts = \App\Models\Product::with('category')
+        $featuredProducts = Product::with('category')
             ->where('is_featured', true)
             ->where('is_active', true)
+            ->where('is_available', true)
             ->orderBy('sort_order')
-            ->take(8)
+            ->take(4)
             ->get();
 
-        $categories = \App\Models\Category::where('is_active', true)
-            ->withCount(['activeProducts'])
-            ->orderBy('sort_order')
+        $freshProducts = Product::with('category')
+            ->where('is_active', true)
+            ->where('is_available', true)
+            ->latest()
+            ->take(3)
             ->get();
 
-        $galleryImages = \App\Models\GalleryImage::where('is_active', true)
-            ->orderBy('sort_order')
-            ->take(12)
-            ->get();
-
-        return view('frontend.home', compact('featuredProducts', 'categories', 'galleryImages'));
+        return view('frontend.home.index', compact('featuredProducts', 'freshProducts'));
     }
 }
