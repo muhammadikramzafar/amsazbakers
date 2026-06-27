@@ -2,7 +2,7 @@
      SITE FOOTER  —  3-column grid + copyright bar
      ================================================================ --}}
 <footer class="site-footer" role="contentinfo">
-  <div class="site-footer__grid">
+  <div class="site-footer__grid site-footer__grid--4col">
 
     {{-- Col 1: Brand + social links --}}
     <div class="footer-col">
@@ -45,7 +45,30 @@
       </ul>
     </div>
 
-    {{-- Col 3: Contact info --}}
+    {{-- Col 3: Explore --}}
+    <div class="footer-col">
+      <h3 class="footer-col__heading">Explore</h3>
+      <ul class="footer-links">
+        <li>
+          <a href="{{ route('recipes.index') }}" class="footer-links__item footer-links__item--highlight">
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" width="14" height="14" aria-hidden="true"><path d="M3 11l13-6-6 13-1.5-5.5L3 11z"/></svg>
+            Recipes
+          </a>
+        </li>
+        <li>
+          <a href="{{ route('blog.index') }}" class="footer-links__item footer-links__item--highlight">
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" width="14" height="14" aria-hidden="true"><rect x="2" y="2" width="12" height="12" rx="2"/><line x1="5" y1="6" x2="11" y2="6"/><line x1="5" y1="9" x2="9" y2="9"/></svg>
+            Blog
+          </a>
+        </li>
+        <li><a href="{{ route('products.category', 'pizza') }}"         class="footer-links__item">Pizza</a></li>
+        <li><a href="{{ route('products.category', 'cakes') }}"         class="footer-links__item">Cakes</a></li>
+        <li><a href="{{ route('products.category', 'fast-food') }}"     class="footer-links__item">Fast Food</a></li>
+        <li><a href="{{ route('products.category', 'beverages') }}"     class="footer-links__item">Beverages</a></li>
+      </ul>
+    </div>
+
+    {{-- Col 4: Contact info --}}
     <div class="footer-col">
       <h3 class="footer-col__heading">Contact Info</h3>
       <div class="footer-contact-list">

@@ -1,25 +1,34 @@
-<x-guest-layout>
-    <div class="mb-4 text-sm text-gray-600">
-        {{ __('Forgot your password? No problem. Just let us know your email address and we will email you a password reset link that will allow you to choose a new one.') }}
+@extends('auth.layouts.guest')
+@section('title', 'Forgot Password')
+
+@section('content')
+  <h2 class="auth-card__heading">Reset your password</h2>
+  <p class="auth-card__desc">
+    Enter your email address and we'll send you a password reset link.
+  </p>
+
+  @if(session('status'))
+    <div class="auth-status" role="alert">{{ session('status') }}</div>
+  @endif
+
+  <form method="POST" action="{{ route('password.email') }}" novalidate>
+    @csrf
+
+    <div class="form-group">
+      <label class="form-label" for="email">Email Address</label>
+      <input class="form-control @error('email') is-invalid @enderror"
+             type="email" id="email" name="email"
+             value="{{ old('email') }}"
+             autocomplete="username" autofocus required />
+      @error('email')
+        <p class="form-error" role="alert">{{ $message }}</p>
+      @enderror
     </div>
 
-    <!-- Session Status -->
-    <x-auth-session-status class="mb-4" :status="session('status')" />
+    <button type="submit" class="btn-auth">Send Reset Link</button>
 
-    <form method="POST" action="{{ route('password.email') }}">
-        @csrf
-
-        <!-- Email Address -->
-        <div>
-            <x-input-label for="email" :value="__('Email')" />
-            <x-text-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autofocus />
-            <x-input-error :messages="$errors->get('email')" class="mt-2" />
-        </div>
-
-        <div class="flex items-center justify-end mt-4">
-            <x-primary-button>
-                {{ __('Email Password Reset Link') }}
-            </x-primary-button>
-        </div>
-    </form>
-</x-guest-layout>
+    <p style="text-align:center; margin-top:16px;">
+      <a href="{{ route('login') }}" class="auth-link">&larr; Back to login</a>
+    </p>
+  </form>
+@endsection

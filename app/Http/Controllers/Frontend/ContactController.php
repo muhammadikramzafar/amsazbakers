@@ -3,8 +3,10 @@
 namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Frontend\ContactRequest;
+use App\Mail\ContactNotificationMail;
 use App\Models\ContactMessage;
-use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 class ContactController extends Controller
 {
@@ -13,18 +15,14 @@ class ContactController extends Controller
         return view('frontend.contact.index');
     }
 
-    public function store(Request $request)
+    public function store(ContactRequest $request)
     {
-        $validated = $request->validate([
-            'name'    => 'required|string|max:255',
-            'email'   => 'required|email|max:255',
-            'phone'   => 'nullable|string|max:20',
-            'subject' => 'nullable|string|max:255',
-            'message' => 'required|string|max:2000',
-        ]);
+        $message = ContactMessage::create($request->validated());
 
-        ContactMessage::create($validated);
+        Mail::to(config('mail.from.address'))
+            ->queue(new ContactNotificationMail($message));
 
-        return redirect()->route('contact')->with('success', 'Thank you! Your message has been sent. We will get back to you shortly.');
+        return redirect()->route('contact')
+            ->with('success', 'Thank you! Your message has been sent. We will get back to you shortly.');
     }
 }

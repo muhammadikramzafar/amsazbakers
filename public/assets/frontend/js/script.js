@@ -79,32 +79,211 @@ function showToast(message, type = 'success') {
 }
 
 /* ============================================================
-   CART STATE (in-memory, not localStorage per artifact rules)
+   CART — localStorage persistence + slide-in drawer
    ============================================================ */
 
 const cart = {
-  items: [],
-  count: 0,
+  _key: 'ab_cart',
+
+  _load() {
+    try { return JSON.parse(localStorage.getItem(this._key) || '[]'); } catch { return []; }
+  },
+
+  _save(items) {
+    try { localStorage.setItem(this._key, JSON.stringify(items)); } catch {}
+  },
+
+  get items() { return this._load(); },
+
+  get count() {
+    return this._load().reduce((sum, i) => sum + i.qty, 0);
+  },
+
+  get subtotal() {
+    return this._load().reduce((sum, i) => sum + (i.price * i.qty), 0);
+  },
 
   add(name, price, qty = 1) {
-    const existing = this.items.find(i => i.name === name);
+    const items = this._load();
+    const existing = items.find(i => i.name === name);
     if (existing) {
       existing.qty += qty;
     } else {
-      this.items.push({ name, price, qty });
+      items.push({ name, price: price || 0, qty });
     }
-    this.count = this.items.reduce((sum, i) => sum + i.qty, 0);
+    this._save(items);
+    this._bumpBadge();
     this.updateUI();
+    this.renderDrawer();
+  },
+
+  remove(name) {
+    const items = this._load().filter(i => i.name !== name);
+    this._save(items);
+    this.updateUI();
+    this.renderDrawer();
+  },
+
+  setQty(name, qty) {
+    if (qty < 1) { this.remove(name); return; }
+    const items = this._load();
+    const item = items.find(i => i.name === name);
+    if (item) { item.qty = qty; this._save(items); }
+    this.updateUI();
+    this.renderDrawer();
+  },
+
+  clear() {
+    this._save([]);
+    this.updateUI();
+    this.renderDrawer();
+  },
+
+  _bumpBadge() {
+    const badge = document.getElementById('cartBadge');
+    if (!badge) return;
+    badge.classList.remove('bump');
+    void badge.offsetWidth;
+    badge.classList.add('bump');
+    setTimeout(() => badge.classList.remove('bump'), 400);
   },
 
   updateUI() {
-    const badges = document.querySelectorAll('.cart-badge');
-    badges.forEach(b => {
-      b.textContent = this.count;
-      b.setAttribute('aria-label', `${this.count} item${this.count !== 1 ? 's' : ''} in cart`);
+    const count = this.count;
+    const badge = document.getElementById('cartBadge');
+    if (badge) {
+      badge.textContent = count;
+      badge.style.display = count === 0 ? 'none' : '';
+    }
+    const toggleBtn = document.getElementById('cartToggleBtn');
+    if (toggleBtn) {
+      toggleBtn.setAttribute('aria-label', `Open cart (${count} item${count !== 1 ? 's' : ''})`);
+    }
+    const countEl = document.getElementById('cartDrawerCount');
+    if (countEl) countEl.textContent = `${count} item${count !== 1 ? 's' : ''}`;
+  },
+
+  renderDrawer() {
+    const body   = document.getElementById('cartDrawerBody');
+    const footer = document.getElementById('cartDrawerFooter');
+    const subtotalEl = document.getElementById('cartSubtotal');
+    if (!body) return;
+
+    const items = this._load();
+
+    if (items.length === 0) {
+      body.innerHTML = `
+        <div class="cart-empty">
+          <div class="cart-empty__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="32" height="32">
+              <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/>
+              <line x1="3" y1="6" x2="21" y2="6"/>
+              <path d="M16 10a4 4 0 0 1-8 0"/>
+            </svg>
+          </div>
+          <p class="cart-empty__title">Your cart is empty</p>
+          <p class="cart-empty__sub">Add some delicious items to get started.</p>
+          <a href="/products" class="btn btn--primary" style="margin-top:8px;padding:12px 28px;">
+            Browse Products
+          </a>
+        </div>`;
+      if (footer) footer.hidden = true;
+      return;
+    }
+
+    body.innerHTML = items.map(item => `
+      <div class="cart-item" data-name="${escHtml(item.name)}">
+        <div class="cart-item__img">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" width="28" height="28">
+            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+          </svg>
+        </div>
+        <div class="cart-item__info">
+          <p class="cart-item__name">${escHtml(item.name)}</p>
+          <p class="cart-item__price">${item.price > 0 ? formatPrice(item.price) : '—'}</p>
+          <div class="cart-item__qty">
+            <button class="cart-item__qty-btn" data-action="dec" data-name="${escHtml(item.name)}" aria-label="Decrease quantity">−</button>
+            <span class="cart-item__qty-val">${item.qty}</span>
+            <button class="cart-item__qty-btn" data-action="inc" data-name="${escHtml(item.name)}" aria-label="Increase quantity">+</button>
+          </div>
+        </div>
+        <button class="cart-item__remove" data-name="${escHtml(item.name)}" aria-label="Remove ${escHtml(item.name)} from cart">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16">
+            <polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/><path d="M10 11v6"/><path d="M14 11v6"/><path d="M9 6V4a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2"/>
+          </svg>
+        </button>
+      </div>
+    `).join('');
+
+    if (footer) footer.hidden = false;
+    if (subtotalEl) {
+      const sub = this.subtotal;
+      subtotalEl.textContent = sub > 0 ? formatPrice(sub) : '—';
+    }
+
+    // Bind qty / remove handlers
+    body.querySelectorAll('.cart-item__qty-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const name = btn.dataset.name;
+        const current = this._load().find(i => i.name === name);
+        if (!current) return;
+        if (btn.dataset.action === 'inc') this.setQty(name, current.qty + 1);
+        else this.setQty(name, current.qty - 1);
+      });
     });
+    body.querySelectorAll('.cart-item__remove').forEach(btn => {
+      btn.addEventListener('click', () => this.remove(btn.dataset.name));
+    });
+  },
+
+  open() {
+    const drawer  = document.getElementById('cartDrawer');
+    const overlay = document.getElementById('cartOverlay');
+    const btn     = document.getElementById('cartToggleBtn');
+    if (!drawer) return;
+    this.renderDrawer();
+    drawer.hidden  = false;
+    overlay.hidden = false;
+    if (btn) btn.setAttribute('aria-expanded', 'true');
+    document.body.style.overflow = 'hidden';
+    // focus close btn
+    setTimeout(() => document.getElementById('cartCloseBtn')?.focus(), 50);
+  },
+
+  close() {
+    const drawer  = document.getElementById('cartDrawer');
+    const overlay = document.getElementById('cartOverlay');
+    const btn     = document.getElementById('cartToggleBtn');
+    if (!drawer) return;
+    drawer.hidden  = true;
+    overlay.hidden = true;
+    if (btn) { btn.setAttribute('aria-expanded', 'false'); btn.focus(); }
+    document.body.style.overflow = '';
   }
 };
+
+function escHtml(str) {
+  return String(str).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+
+/* ── Cart toggle / close / clear wiring ─────────── */
+function initCartDrawer() {
+  document.getElementById('cartToggleBtn')?.addEventListener('click', () => {
+    const drawer = document.getElementById('cartDrawer');
+    if (drawer && !drawer.hidden) cart.close(); else cart.open();
+  });
+  document.getElementById('cartCloseBtn')?.addEventListener('click', () => cart.close());
+  document.getElementById('cartOverlay')?.addEventListener('click', () => cart.close());
+  document.getElementById('cartClearBtn')?.addEventListener('click', () => {
+    if (confirm('Remove all items from your cart?')) cart.clear();
+  });
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') {
+      const drawer = document.getElementById('cartDrawer');
+      if (drawer && !drawer.hidden) cart.close();
+    }
+  });
+}
 
 /* ============================================================
    MOBILE HAMBURGER MENU
@@ -197,31 +376,43 @@ function initLazyImages() {
    ============================================================ */
 
 function initAddToCartButtons() {
-  document.querySelectorAll('.btn--cream, .btn--primary').forEach(btn => {
-    if (btn.textContent.trim().toUpperCase() === 'ADD TO CART') {
-      btn.addEventListener('click', function () {
-        // Find product name from nearest card
-        const card = this.closest('.product-card') || this.closest('.fresh-card') || this.closest('.special-card');
-        let name = 'Item';
-        if (card) {
-          const nameEl = card.querySelector('.product-card__name, .fresh-card__name, .special-card__name');
-          if (nameEl) name = nameEl.textContent.trim();
-        }
-        cart.add(name, 0, 1);
-        showToast(`"${name}" added to cart!`);
+  document.querySelectorAll('button[data-product]').forEach(btn => {
+    if (btn.dataset.cartBound) return;
+    btn.dataset.cartBound = '1';
 
-        // Brief visual feedback
-        const original = this.textContent;
-        this.textContent = 'Added ✓';
-        this.style.background = '#5a3e2b';
-        this.style.color = '#fff6e5';
-        setTimeout(() => {
-          this.textContent = original;
-          this.style.background = '';
-          this.style.color = '';
-        }, 1200);
-      });
-    }
+    btn.addEventListener('click', function (e) {
+      e.stopPropagation(); // prevent triggering card link navigation
+
+      // Prefer explicit data attributes; fall back to DOM scraping
+      let name  = this.dataset.product || '';
+      let price = parseInt(this.dataset.price, 10) || 0;
+
+      if (!name) {
+        const card = this.closest('article, .product-card, .fresh-card, .kitchen-card');
+        if (card) {
+          const nameEl = card.querySelector('h3, h2, .product-card__name, .kitchen-card__name');
+          if (nameEl) name = nameEl.textContent.trim();
+          if (!price) {
+            const priceEl = card.querySelector('.product-card__price, .kitchen-card__price, .fresh-card__price, #productPrice');
+            if (priceEl) price = parseInt(priceEl.textContent.replace(/[^0-9]/g, ''), 10) || 0;
+          }
+        }
+      }
+      name = name || 'Item';
+
+      cart.add(name, price, 1);
+      showToast(`"${name}" added to cart!`);
+
+      const original = this.textContent;
+      this.textContent = 'Added ✓';
+      this.style.background = '#5a3e2b';
+      this.style.color = '#fff6e5';
+      setTimeout(() => {
+        this.textContent = original;
+        this.style.background = '';
+        this.style.color = '';
+      }, 1200);
+    });
   });
 }
 
@@ -298,10 +489,10 @@ function initProductAddToCart() {
     cart.add(name, price, qty);
     showToast(`"${name}" added to cart!`);
 
-    addBtn.textContent = 'Added to Cart ✓';
+    addBtn.textContent = 'Added ✓';
     addBtn.style.background = '#5a3e2b';
     setTimeout(() => {
-      addBtn.textContent = 'Add to Cart';
+      addBtn.textContent = 'Chef, Make This!';
       addBtn.style.background = '';
     }, 1500);
   });
@@ -467,13 +658,14 @@ function initSortSelect() {
 
 function initSearchBar() {
   const searchInputs = document.querySelectorAll('.search-bar__input');
+  const searchBase   = document.querySelector('meta[name="search-url"]')?.content || '/search';
 
   searchInputs.forEach(input => {
     input.addEventListener('keydown', (e) => {
       if (e.key === 'Enter') {
         const query = input.value.trim();
-        if (query) {
-          showToast(`Searching for "${query}"…`);
+        if (query.length >= 2) {
+          window.location.href = searchBase + '?q=' + encodeURIComponent(query);
         }
       }
     });
@@ -592,6 +784,7 @@ function initBackToTop() {
    ============================================================ */
 
 document.addEventListener('DOMContentLoaded', () => {
+  initCartDrawer();
   initMobileMenu();
   initStickyHeader();
   initLazyImages();

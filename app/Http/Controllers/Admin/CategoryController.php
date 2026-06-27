@@ -14,18 +14,27 @@ class CategoryController extends Controller
 
     public function index()
     {
-        $categories = Category::withCount('products')->orderBy('sort_order')->paginate(20);
-        return view('admin.categories.index', compact('categories'));
+        $topLevel = Category::with(['children' => function ($q) {
+            $q->withCount('products')->orderBy('sort_order');
+        }])
+        ->withCount('products')
+        ->whereNull('parent_id')
+        ->orderBy('sort_order')
+        ->get();
+
+        return view('admin.categories.index', compact('topLevel'));
     }
 
     public function create()
     {
-        return view('admin.categories.form');
+        $parents = Category::whereNull('parent_id')->active()->orderBy('name')->get();
+        return view('admin.categories.form', compact('parents'));
     }
 
     public function store(Request $request)
     {
         $validated = $request->validate([
+            'parent_id'   => 'nullable|exists:categories,id',
             'name'        => 'required|string|max:255|unique:categories',
             'description' => 'nullable|string',
             'icon'        => 'nullable|string|max:50',
@@ -36,6 +45,7 @@ class CategoryController extends Controller
 
         $validated['slug']      = Str::slug($validated['name']);
         $validated['is_active'] = $request->boolean('is_active', true);
+        $validated['parent_id'] = $request->filled('parent_id') ? $request->parent_id : null;
 
         if ($request->hasFile('image')) {
             $validated['image'] = $this->imageService->uploadCategory($request->file('image'));
@@ -48,12 +58,18 @@ class CategoryController extends Controller
 
     public function edit(Category $category)
     {
-        return view('admin.categories.form', compact('category'));
+        // Only top-level categories can be parents
+        $parents = Category::whereNull('parent_id')
+            ->where('id', '!=', $category->id)
+            ->active()->orderBy('name')->get();
+
+        return view('admin.categories.form', compact('category', 'parents'));
     }
 
     public function update(Request $request, Category $category)
     {
         $validated = $request->validate([
+            'parent_id'   => 'nullable|exists:categories,id',
             'name'        => 'required|string|max:255|unique:categories,name,'.$category->id,
             'description' => 'nullable|string',
             'icon'        => 'nullable|string|max:50',
@@ -64,6 +80,7 @@ class CategoryController extends Controller
 
         $validated['slug']      = Str::slug($validated['name']);
         $validated['is_active'] = $request->boolean('is_active', true);
+        $validated['parent_id'] = $request->filled('parent_id') ? $request->parent_id : null;
 
         if ($request->hasFile('image')) {
             $this->imageService->delete($category->image);

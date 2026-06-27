@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="csrf-token" content="{{ csrf_token() }}" />
+  <meta name="search-url" content="{{ route('products.search') }}" />
 
   <title>@yield('title', config('app.name').' — Crafted with Love, Delivered Fresh')</title>
   <meta name="description" content="@yield('meta_description', 'South Asian fusion delights — cakes, sweets, pizza, snacks and more. Same-day delivery in Lahore.')" />

@@ -2,18 +2,17 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\User;
 use Illuminate\Database\Seeder;
+use Spatie\Permission\Models\Permission;
+use Spatie\Permission\Models\Role;
+use Spatie\Permission\PermissionRegistrar;
 
 class RolesAndPermissionsSeeder extends Seeder
 {
-    /**
-     * Run the database seeds.
-     */
     public function run(): void
     {
-        // Reset cached roles and permissions
-        app()[\Spatie\Permission\PermissionRegistrar::class]->forgetCachedPermissions();
+        app()[PermissionRegistrar::class]->forgetCachedPermissions();
 
         // --- Permissions ---
         $permissions = [
@@ -31,17 +30,17 @@ class RolesAndPermissionsSeeder extends Seeder
             'view users', 'manage users',
         ];
 
-        foreach ($permissions as $permission) {
-            \Spatie\Permission\Models\Permission::firstOrCreate(['name' => $permission]);
+        foreach ($permissions as $perm) {
+            Permission::firstOrCreate(['name' => $perm]);
         }
 
         // --- Roles ---
 
-        // Super Admin gets everything (bypass all permission checks via Gate::before)
-        $superAdmin = \Spatie\Permission\Models\Role::firstOrCreate(['name' => 'super-admin']);
+        // Super Admin — full access via Gate::before bypass; no explicit permissions needed
+        Role::firstOrCreate(['name' => 'super-admin']);
 
-        // Admin gets all except user management
-        $admin = \Spatie\Permission\Models\Role::firstOrCreate(['name' => 'admin']);
+        // Admin — full content management, no user management
+        $admin = Role::firstOrCreate(['name' => 'admin']);
         $admin->syncPermissions([
             'view products', 'create products', 'edit products', 'delete products',
             'view categories', 'create categories', 'edit categories', 'delete categories',
@@ -50,18 +49,22 @@ class RolesAndPermissionsSeeder extends Seeder
             'view gallery', 'manage gallery',
         ]);
 
-        // Staff can view and manage reservations / messages only
-        $staff = \Spatie\Permission\Models\Role::firstOrCreate(['name' => 'staff']);
-        $staff->syncPermissions([
-            'view products',
-            'view categories',
-            'view reservations', 'manage reservations',
+        // Content Editor — create/edit content only, no deletes, no user management
+        $editor = Role::firstOrCreate(['name' => 'content-editor']);
+        $editor->syncPermissions([
+            'view products', 'create products', 'edit products',
+            'view categories', 'create categories', 'edit categories',
+            'view reservations',
             'view messages',
+            'view gallery', 'manage gallery',
         ]);
 
+        // Remove old 'staff' role if it still exists from a previous seed
+        Role::where('name', 'staff')->delete();
+
         // Assign super-admin role to the seeded admin user
-        $adminUser = \App\Models\User::where('email', 'admin@bakerssweets.pk')->first();
-        if ($adminUser) {
+        $adminUser = User::where('email', 'admin@bakerssweets.pk')->first();
+        if ($adminUser && ! $adminUser->hasRole('super-admin')) {
             $adminUser->assignRole('super-admin');
         }
     }

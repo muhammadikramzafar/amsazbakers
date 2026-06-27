@@ -1,39 +1,45 @@
-<x-guest-layout>
-    <form method="POST" action="{{ route('password.store') }}">
-        @csrf
+@extends('auth.layouts.guest')
+@section('title', 'Set New Password')
 
-        <!-- Password Reset Token -->
-        <input type="hidden" name="token" value="{{ $request->route('token') }}">
+@section('content')
+  <h2 class="auth-card__heading">Set a new password</h2>
+  <p class="auth-card__desc">Choose a strong password for your account.</p>
 
-        <!-- Email Address -->
-        <div>
-            <x-input-label for="email" :value="__('Email')" />
-            <x-text-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email', $request->email)" required autofocus autocomplete="username" />
-            <x-input-error :messages="$errors->get('email')" class="mt-2" />
-        </div>
+  <form method="POST" action="{{ route('password.store') }}" novalidate>
+    @csrf
+    <input type="hidden" name="token" value="{{ $request->route('token') }}">
 
-        <!-- Password -->
-        <div class="mt-4">
-            <x-input-label for="password" :value="__('Password')" />
-            <x-text-input id="password" class="block mt-1 w-full" type="password" name="password" required autocomplete="new-password" />
-            <x-input-error :messages="$errors->get('password')" class="mt-2" />
-        </div>
+    <div class="form-group">
+      <label class="form-label" for="email">Email Address</label>
+      <input class="form-control @error('email') is-invalid @enderror"
+             type="email" id="email" name="email"
+             value="{{ old('email', $request->email) }}"
+             autocomplete="username" autofocus required />
+      @error('email')
+        <p class="form-error" role="alert">{{ $message }}</p>
+      @enderror
+    </div>
 
-        <!-- Confirm Password -->
-        <div class="mt-4">
-            <x-input-label for="password_confirmation" :value="__('Confirm Password')" />
+    <div class="form-group">
+      <label class="form-label" for="password">New Password</label>
+      <input class="form-control @error('password') is-invalid @enderror"
+             type="password" id="password" name="password"
+             autocomplete="new-password" required />
+      @error('password')
+        <p class="form-error" role="alert">{{ $message }}</p>
+      @enderror
+    </div>
 
-            <x-text-input id="password_confirmation" class="block mt-1 w-full"
-                                type="password"
-                                name="password_confirmation" required autocomplete="new-password" />
+    <div class="form-group">
+      <label class="form-label" for="password_confirmation">Confirm Password</label>
+      <input class="form-control @error('password_confirmation') is-invalid @enderror"
+             type="password" id="password_confirmation" name="password_confirmation"
+             autocomplete="new-password" required />
+      @error('password_confirmation')
+        <p class="form-error" role="alert">{{ $message }}</p>
+      @enderror
+    </div>
 
-            <x-input-error :messages="$errors->get('password_confirmation')" class="mt-2" />
-        </div>
-
-        <div class="flex items-center justify-end mt-4">
-            <x-primary-button>
-                {{ __('Reset Password') }}
-            </x-primary-button>
-        </div>
-    </form>
-</x-guest-layout>
+    <button type="submit" class="btn-auth">Reset Password</button>
+  </form>
+@endsection

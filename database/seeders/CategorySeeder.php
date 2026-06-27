@@ -2,27 +2,33 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
 class CategorySeeder extends Seeder
 {
-    /**
-     * Run the database seeds.
-     */
     public function run(): void
     {
         $categories = [
-            ['name' => 'Bakery',         'slug' => 'bakery',         'icon' => 'fa-bread-slice', 'sort_order' => 1],
-            ['name' => 'Sweets',         'slug' => 'sweets',         'icon' => 'fa-candy-cane',  'sort_order' => 2],
-            ['name' => 'Cakes',          'slug' => 'cakes',          'icon' => 'fa-birthday-cake','sort_order' => 3],
-            ['name' => 'Pastries',       'slug' => 'pastries',       'icon' => 'fa-cookie',       'sort_order' => 4],
-            ['name' => 'Beverages',      'slug' => 'beverages',      'icon' => 'fa-mug-hot',      'sort_order' => 5],
-            ['name' => 'Special Orders', 'slug' => 'special-orders', 'icon' => 'fa-star',         'sort_order' => 6],
+            ['name' => 'Sweets',        'slug' => 'sweets',       'sort_order' => 1,  'is_active' => true],
+            ['name' => 'Pizza',         'slug' => 'pizza',        'sort_order' => 2,  'is_active' => true],
+            ['name' => 'Snacks',        'slug' => 'snacks',       'sort_order' => 3,  'is_active' => true],
+            ['name' => 'Dairy',         'slug' => 'dairy',        'sort_order' => 4,  'is_active' => true],
+            ['name' => 'Coffee & Tea',  'slug' => 'coffee-tea',   'sort_order' => 5,  'is_active' => true],
+            ['name' => 'Juices',        'slug' => 'juices',       'sort_order' => 6,  'is_active' => true],
+            ['name' => 'Shakes',        'slug' => 'shakes',       'sort_order' => 7,  'is_active' => true],
+            ['name' => 'Ice Cream',     'slug' => 'ice-cream',    'sort_order' => 8,  'is_active' => true],
+            ['name' => 'Salad & Chaat', 'slug' => 'salad-chaat',  'sort_order' => 9,  'is_active' => true],
+            ['name' => 'Fried Items',   'slug' => 'fried-items',  'sort_order' => 10, 'is_active' => true],
+            ['name' => 'Fast Food',     'slug' => 'fast-food',    'sort_order' => 11, 'is_active' => true],
+            ['name' => 'Deals',         'slug' => 'deals',        'sort_order' => 12, 'is_active' => true],
+            ['name' => 'Bakery',        'slug' => 'bakery',       'sort_order' => 13, 'is_active' => true],
+            ['name' => 'Cakes',         'slug' => 'cakes',        'sort_order' => 14, 'is_active' => true],
+            ['name' => 'Pastries',      'slug' => 'pastries',     'sort_order' => 15, 'is_active' => true],
+            ['name' => 'Beverages',     'slug' => 'beverages',    'sort_order' => 16, 'is_active' => true],
         ];
 
-        foreach ($categories as $category) {
-            \App\Models\Category::updateOrCreate(['slug' => $category['slug']], $category);
+        foreach ($categories as $cat) {
+            \App\Models\Category::updateOrCreate(['slug' => $cat['slug']], $cat);
         }
     }
 }
