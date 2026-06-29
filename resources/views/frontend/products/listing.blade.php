@@ -142,11 +142,13 @@
           </ul>
         </div>
 
-        <button type="submit" class="btn btn--primary btn--full" style="margin-top:16px;">Apply Filters</button>
-        @if(request()->hasAny(['min_price','max_price','featured','bestseller']))
-          <a href="{{ isset($category) ? route('products.category', $category->slug) : route('products.listing') }}"
-             class="btn btn--outline btn--full" style="margin-top:8px;">Clear Filters</a>
-        @endif
+        <div style="margin-top:14px;display:flex;flex-direction:column;gap:6px;">
+          <button type="submit" class="btn btn--primary btn--full" style="font-size:13px;padding:8px 12px;">Apply Filters</button>
+          @if(request()->hasAny(['min_price','max_price','featured','bestseller']))
+            <a href="{{ isset($category) ? route('products.category', $category->slug) : route('products.listing') }}"
+               class="btn btn--outline btn--full" style="font-size:12px;padding:7px 12px;">Clear Filters</a>
+          @endif
+        </div>
       </form>
     </aside>
 
