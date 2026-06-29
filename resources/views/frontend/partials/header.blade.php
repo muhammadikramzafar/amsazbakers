@@ -102,7 +102,7 @@
     <p class="cart-drawer__delivery-note">
       Free delivery on orders above Rs. 999
     </p>
-    <a href="{{ route('products.listing') }}" class="btn btn--primary btn--full">
+    <a href="{{ route('checkout') }}" class="btn btn--primary btn--full">
       Proceed to Checkout
     </a>
     <button class="btn btn--outline btn--full cart-drawer__clear" id="cartClearBtn">

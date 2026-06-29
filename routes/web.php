@@ -116,6 +116,9 @@ Route::group([], function () {
     Route::get('/reservation',  [ReservationController::class, 'index'])->name('reservation');
     Route::post('/reservation', [ReservationController::class, 'store'])->name('reservation.store');
 
+    // Checkout
+    Route::get('/checkout', fn() => view('frontend.checkout.index'))->name('checkout');
+
 });
 
 /*
