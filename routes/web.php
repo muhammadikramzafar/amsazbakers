@@ -76,8 +76,9 @@ Route::group([], function () {
     Route::get('/menu/{menuItem:slug}',      [FrontendMenuController::class, 'show'])->name('menu.show');
 
     // Recipes
-    Route::get('/recipes',                   [FrontendRecipeController::class, 'index'])->name('recipes.index');
-    Route::get('/recipes/{recipe:slug}',     [FrontendRecipeController::class, 'show'])->name('recipes.show');
+    Route::get('/recipes',                           [FrontendRecipeController::class, 'index'])->name('recipes.index');
+    Route::get('/recipes/category/{slug}',           [FrontendRecipeController::class, 'category'])->name('recipes.category');
+    Route::get('/recipes/{recipe:slug}',             [FrontendRecipeController::class, 'show'])->name('recipes.show');
 
     // Gallery
     Route::get('/gallery',              [FrontendGalleryController::class, 'index'])->name('gallery.index');

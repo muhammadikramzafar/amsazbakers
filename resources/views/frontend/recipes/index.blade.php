@@ -1,7 +1,7 @@
 @extends('frontend.layouts.app')
 
-@section('title', 'Recipes — Azmeer Bakery')
-@section('meta_description', 'Discover delicious recipes from Azmeer Bakery — from classic Pakistani sweets to artisan breads, cakes and seasonal specials.')
+@section('title', isset($activeCategory) ? $activeCategory->name . ' Recipes — Azmeer Bakery' : 'Recipes — Azmeer Bakery')
+@section('meta_description', isset($activeCategory) ? 'Browse ' . $activeCategory->name . ' recipes from Azmeer Bakery — step-by-step guides from our kitchen.' : 'Discover delicious recipes from Azmeer Bakery — from classic Pakistani sweets to artisan breads, cakes and seasonal specials.')
 
 @section('content')
 
@@ -18,40 +18,47 @@
 
   {{-- ── SEARCH + FILTER BAR ── --}}
   <div class="recipes-toolbar">
-    <form method="GET" action="{{ route('recipes.index') }}" class="recipes-search-form">
+    @php
+      $searchAction = isset($activeCategory)
+          ? route('recipes.category', $activeCategory->slug)
+          : route('recipes.index');
+      $diffBase = fn(string $d) => isset($activeCategory)
+          ? route('recipes.category', $activeCategory->slug) . '?difficulty=' . $d
+          : route('recipes.index', ['difficulty' => $d]);
+    @endphp
+    <form method="GET" action="{{ $searchAction }}" class="recipes-search-form">
       <div class="recipes-search-wrap">
         <svg class="recipes-search-icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" width="18" height="18" aria-hidden="true"><circle cx="9" cy="9" r="6"/><path d="m15 15 3 3"/></svg>
         <input type="text" name="search" value="{{ request('search') }}" placeholder="Search recipes…" class="recipes-search-input" />
-        @if(request('category'))<input type="hidden" name="category" value="{{ request('category') }}" />@endif
         @if(request('difficulty'))<input type="hidden" name="difficulty" value="{{ request('difficulty') }}" />@endif
       </div>
       <button type="submit" class="btn btn--primary" style="flex-shrink:0;">Search</button>
-      @if(request()->hasAny(['search','category','difficulty','featured']))
+      @if(request()->hasAny(['search','difficulty','featured']) || isset($activeCategory))
         <a href="{{ route('recipes.index') }}" class="btn btn--outline" style="flex-shrink:0;">Clear</a>
       @endif
     </form>
 
     <div class="recipes-filter-pills">
       <a href="{{ route('recipes.index') }}"
-         class="rpill {{ !request('category') && !request('difficulty') ? 'rpill--active' : '' }}">All</a>
+         class="rpill {{ !isset($activeCategory) && !request('difficulty') ? 'rpill--active' : '' }}">All</a>
       @foreach($categories as $cat)
-        <a href="{{ route('recipes.index', ['category' => $cat->slug]) }}"
-           class="rpill {{ request('category') === $cat->slug ? 'rpill--active' : '' }}">
+        <a href="{{ route('recipes.category', $cat->slug) }}"
+           class="rpill {{ isset($activeCategory) && $activeCategory->slug === $cat->slug ? 'rpill--active' : '' }}">
           {{ $cat->name }}@if($cat->published_count > 0)<sup>{{ $cat->published_count }}</sup>@endif
         </a>
       @endforeach
       <span class="rpill-sep" aria-hidden="true"></span>
-      <a href="{{ route('recipes.index', array_merge(request()->except(['difficulty']), ['difficulty' => 'easy'])) }}"
+      <a href="{{ $diffBase('easy') }}"
          class="rpill rpill--diff rpill--easy {{ request('difficulty') === 'easy' ? 'rpill--active' : '' }}">Easy</a>
-      <a href="{{ route('recipes.index', array_merge(request()->except(['difficulty']), ['difficulty' => 'medium'])) }}"
+      <a href="{{ $diffBase('medium') }}"
          class="rpill rpill--diff rpill--medium {{ request('difficulty') === 'medium' ? 'rpill--active' : '' }}">Medium</a>
-      <a href="{{ route('recipes.index', array_merge(request()->except(['difficulty']), ['difficulty' => 'hard'])) }}"
+      <a href="{{ $diffBase('hard') }}"
          class="rpill rpill--diff rpill--hard {{ request('difficulty') === 'hard' ? 'rpill--active' : '' }}">Hard</a>
     </div>
   </div>
 
   {{-- ── FEATURED RECIPES ── --}}
-  @if($featuredRecipes->isNotEmpty() && !request()->filled('search') && !request()->filled('category') && !request()->filled('difficulty'))
+  @if($featuredRecipes->isNotEmpty() && !request()->filled('search') && !isset($activeCategory) && !request()->filled('difficulty'))
   <div class="recipes-featured">
     <div class="recipes-section-label">
       <svg viewBox="0 0 16 16" fill="#c8a24a" width="14" height="14"><path d="M8 1l1.9 3.8L14 5.6l-3 2.9.7 4.1L8 10.4l-3.7 2.2.7-4.1-3-2.9 4.1-.8z"/></svg>
@@ -87,7 +94,7 @@
       <a href="{{ route('recipes.index') }}" class="btn btn--outline">Browse All</a>
     </div>
   @else
-    @if($featuredRecipes->isNotEmpty() && !request()->filled('search') && !request()->filled('category') && !request()->filled('difficulty'))
+    @if($featuredRecipes->isNotEmpty() && !request()->filled('search') && !isset($activeCategory) && !request()->filled('difficulty'))
     <div class="recipes-section-label" style="margin-top:48px;">All Recipes</div>
     @endif
     <div class="rcard-grid">
