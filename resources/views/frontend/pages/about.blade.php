@@ -167,7 +167,7 @@
 /* Shared hero (reused by contact too via include) */
 .pg-hero {
   position: relative;
-  padding: 80px 24px 72px;
+  padding: calc(var(--header-h) + 56px) 24px 72px;
   text-align: center;
   background: linear-gradient(135deg, #2b1207 0%, #4a1e08 50%, #3d1a0b 100%);
   overflow: hidden;

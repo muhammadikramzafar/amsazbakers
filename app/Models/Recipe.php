@@ -36,7 +36,9 @@ class Recipe extends Model
 
     public function getImageUrlAttribute(): string
     {
-        return $this->featured_image ? Storage::url($this->featured_image) : '';
+        if (!$this->featured_image) return '';
+        if (str_starts_with($this->featured_image, 'http')) return $this->featured_image;
+        return Storage::url($this->featured_image);
     }
 
     public function getGalleryUrlsAttribute(): array

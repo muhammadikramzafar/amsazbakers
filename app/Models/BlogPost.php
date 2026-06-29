@@ -38,7 +38,9 @@ class BlogPost extends Model
 
     public function getImageUrlAttribute(): ?string
     {
-        return $this->featured_image ? Storage::url($this->featured_image) : null;
+        if (!$this->featured_image) return null;
+        if (str_starts_with($this->featured_image, 'http')) return $this->featured_image;
+        return Storage::url($this->featured_image);
     }
 
     public function getGalleryUrlsAttribute(): array

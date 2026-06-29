@@ -61,7 +61,7 @@
       @foreach($featuredRecipes as $i => $rec)
         <article class="rfc {{ $i === 0 ? 'rfc--hero' : '' }}">
           <a href="{{ route('recipes.show', $rec->slug) }}" class="rfc__img-wrap">
-            <img src="{{ $rec->featured_image ? Storage::url($rec->featured_image) : 'https://placehold.co/800x500/3d1a0b/c8a24a?text='.urlencode($rec->title) }}"
+            <img src="{{ $rec->image_url ?: 'https://placehold.co/800x500/3d1a0b/c8a24a?text='.urlencode($rec->title) }}"
                  alt="{{ $rec->title }}" loading="lazy" />
             <div class="rfc__overlay">
               <span class="rfc__cat">{{ $rec->category->name ?? '' }}</span>
@@ -94,7 +94,7 @@
       @foreach($recipes as $rec)
         <article class="rcard">
           <a href="{{ route('recipes.show', $rec->slug) }}" class="rcard__img-wrap">
-            <img src="{{ $rec->featured_image ? Storage::url($rec->featured_image) : 'https://placehold.co/600x400/3d1a0b/c8a24a?text='.urlencode($rec->title) }}"
+            <img src="{{ $rec->image_url ?: 'https://placehold.co/600x400/3d1a0b/c8a24a?text='.urlencode($rec->title) }}"
                  alt="{{ $rec->title }}" loading="lazy" />
             @if($rec->is_featured)<span class="rcard__badge">★ Featured</span>@endif
             <span class="diff-pill diff-pill--{{ $rec->difficulty }} rcard__diff">{{ $rec->difficulty_label }}</span>
@@ -133,7 +133,7 @@
 <style>
 .pg-hero {
   position: relative;
-  padding: 80px 24px 72px;
+  padding: calc(var(--header-h) + 56px) 24px 72px;
   text-align: center;
   background: linear-gradient(135deg, #2b1207 0%, #4a1e08 50%, #3d1a0b 100%);
   overflow: hidden;
