@@ -209,7 +209,9 @@
               <h3 class="fresh-card__name">{{ $product->name }}</h3>
               <p class="fresh-card__desc">{{ Str::limit($product->description, 80) }}</p>
               <p class="fresh-card__price">{{ $product->display_price }}</p>
-              <button class="btn btn--cream btn--full">Chef, Make This!</button>
+              <button class="btn btn--cream btn--full"
+                      data-product="{{ $product->name }}"
+                      data-price="{{ $product->price }}">{{ $product->cart_button_text }}</button>
             </div>
           </article>
         @endforeach
@@ -224,7 +226,9 @@
               <h3 class="fresh-card__name">{{ $item['name'] }}</h3>
               <p class="fresh-card__desc">{{ $item['desc'] }}</p>
               <p class="fresh-card__price">{{ $item['price'] }}</p>
-              <button class="btn btn--cream btn--full">Chef, Make This!</button>
+              <button class="btn btn--cream btn--full"
+                      data-product="{{ $item['name'] }}"
+                      data-price="{{ (int) filter_var($item['price'], FILTER_SANITIZE_NUMBER_INT) }}">Chef, Make This!</button>
             </div>
           </article>
         @endforeach
@@ -264,7 +268,9 @@
             <h3 class="kitchen-card__name">{{ $item['name'] }}</h3>
             <p class="kitchen-card__desc">{{ $item['desc'] }}</p>
             <p class="kitchen-card__price">{{ $item['price'] }}</p>
-            <button class="btn btn--cream btn--full">Chef, Make This!</button>
+            <button class="btn btn--cream btn--full"
+                    data-product="{{ $item['name'] }}"
+                    data-price="{{ (int) filter_var($item['price'], FILTER_SANITIZE_NUMBER_INT) }}">Chef, Make This!</button>
           </div>
         </article>
       @endforeach
