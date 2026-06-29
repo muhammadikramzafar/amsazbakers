@@ -131,6 +131,53 @@ select.form-control { appearance: none; background-image: url("data:image/svg+xm
 /* Alert icons */
 .alert { display: flex; align-items: center; gap: 10px; }
 
+/* ── Missing BEM aliases & extras ── */
+.admin-page { }
+.admin-page__header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 24px; flex-wrap: wrap; gap: 12px; }
+.admin-page__title  { font-size: 22px; font-weight: 700; color: var(--clr-text); }
+.admin-page__sub    { font-size: 13px; color: var(--clr-muted); margin-top: 3px; }
+.admin-page__actions { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
+
+/* Filter bar */
+.admin-filters { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; margin-bottom: 16px; padding: 14px 16px; background: var(--clr-card); border: 1px solid var(--clr-border); border-radius: var(--radius); }
+.filter-select { padding: 8px 32px 8px 10px; border: 1px solid var(--clr-border); border-radius: 6px; font-size: 13px; font-family: inherit; background: var(--clr-card); color: var(--clr-text); appearance: none; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 16 16' fill='none' stroke='%236c757d' stroke-width='1.5' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M4 6l4 4 4-4'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 8px center; background-size: 14px; cursor: pointer; }
+.filter-select:focus { outline: none; border-color: var(--clr-gold); }
+
+/* Badge colour aliases */
+.badge--success { background: #dcfce7; color: #166534; }
+.badge--grey    { background: #f3f4f6; color: #6b7280; }
+.badge--warning { background: #fef9c3; color: #854d0e; }
+.badge--blue    { background: #dbeafe; color: #1d4ed8; }
+.badge--red     { background: #fee2e2; color: #991b1b; }
+
+/* Card footer (pagination) */
+.admin-card__footer { padding-top: 16px; border-top: 1px solid var(--clr-border); margin-top: 8px; }
+
+/* Thumbnail with fallback icon */
+.admin-thumb { width: 44px; height: 44px; border-radius: 8px; object-fit: cover; display: block; }
+.admin-thumb-placeholder { width: 44px; height: 44px; border-radius: 8px; background: #f5ede0; display: flex; align-items: center; justify-content: center; font-size: 18px; flex-shrink: 0; }
+
+/* Album card grid */
+.album-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 16px; }
+.album-card { background: var(--clr-card); border: 1px solid var(--clr-border); border-radius: 12px; overflow: hidden; transition: box-shadow .2s; }
+.album-card:hover { box-shadow: 0 4px 16px rgba(0,0,0,.1); }
+.album-card__cover { aspect-ratio: 4/3; overflow: hidden; background: #f5ede0; position: relative; }
+.album-card__cover img { width: 100%; height: 100%; object-fit: cover; }
+.album-card__cover-empty { width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; font-size: 40px; color: #c8a24a; }
+.album-card__type-badge { position: absolute; top: 8px; left: 8px; }
+.album-card__body { padding: 14px; }
+.album-card__name { font-weight: 700; font-size: 14px; margin-bottom: 4px; color: var(--clr-text); }
+.album-card__meta { font-size: 12px; color: var(--clr-muted); margin-bottom: 12px; }
+.album-card__actions { display: flex; gap: 6px; }
+
+/* Newsletter stats row */
+.nl-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 20px; }
+.nl-stat { background: var(--clr-card); border: 1px solid var(--clr-border); border-radius: var(--radius); padding: 16px 20px; text-align: center; box-shadow: var(--shadow); }
+.nl-stat__num   { font-size: 28px; font-weight: 700; color: var(--clr-text); }
+.nl-stat__label { font-size: 12px; color: var(--clr-muted); margin-top: 2px; }
+.nl-stat--green .nl-stat__num { color: #16a34a; }
+.nl-stat--grey  .nl-stat__num { color: var(--clr-muted); }
+
 /* Sidebar responsive */
 @media (max-width: 900px) {
   .admin-sidebar { transform: translateX(-100%); }
